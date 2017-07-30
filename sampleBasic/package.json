@@ -1,0 +1,25 @@
+{
+  "name": "sample-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bobril": "^7.3.2"
+  },
+  "bobril": {
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "strictNullChecks": true
+    }
+  }
+}

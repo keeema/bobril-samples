@@ -1,0 +1,21 @@
+{
+  "name": "sample-bobflux",
+  "version": "1.0.1",
+  "description": "",
+  "typescript": {
+    "main": "src/app.ts"
+  },
+  "author": "keeema",
+  "license": "ISC",
+  "bobril": {
+    "compilerOptions": {
+      "noImplicitThis": true,
+      "noFallthroughCasesInSwitch": true
+    }
+  },
+  "dependencies": {
+    "bobflux": "^9.0.1",
+    "bobflux-monitor": "^3.0.2",
+    "bobril": "^7.3.2"
+  }
+}
