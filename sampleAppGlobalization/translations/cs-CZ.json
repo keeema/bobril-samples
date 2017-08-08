@@ -1,0 +1,99 @@
+[
+	"cs-CZ",
+	[
+    	"Localization",
+    	null,
+    	0,
+    	"Lokalizace"
+  	],
+	[
+    	"Change",
+    	null,
+    	0,
+    	"Změnit"
+  	],
+	[
+    	"Basics",
+    	null,
+    	0,
+    	"Základy"
+  	],
+	[
+    	"Hello World!",
+    	null,
+    	0,
+    	"Ahoj světe!"
+	],
+	[
+    	"My name is {a}!",
+    	null,
+    	1,
+    	"Jmenuji se {a}!"
+	],
+	[
+    	"Ordinal",
+    	null,
+    	0,
+    	"Pořadí"
+	],
+	[
+    	"you are in {floor, selectordinal, =0{ground} one{#st} two{#nd} few{#rd} other{#th}} floor",
+    	null,
+    	1,
+    	"jste v {floor, selectordinal, =0{přízemí} other{#.}} {floor, selectordinal, =0{} other{poschodí}}"
+	],
+	[
+    	"Plural",
+    	null,
+    	0,
+    	"Množné číslo"
+	],
+	[
+    	"here {floor, plural, =0{is no floor} =1{is # floor} other{are # floors}}",
+    	null,
+    	1,
+    	"zde {floor, plural, =0{není} other{je}} {floor, plural, =0{žádné} =1{jedno} other{několik}} poschodí"
+	],
+	[
+    	"Select",
+    	null,
+    	0,
+    	"Výběr"
+	],
+	[
+    	"famous {gender, select, female {woman} male {man} other {person}}",
+    	null,
+    	1,
+    	"{gender, select, female {slavná} male {slavný} other {slavná}} {gender, select, female {žena} male {muž} other {osoba}}"
+	],
+	[
+    	"Number",
+    	null,
+    	0,
+    	"Číslo"
+	],
+	[
+    	"Date & Time",
+    	null,
+    	0,
+    	"Datum a čas"
+	],
+	[
+    	"Calendar",
+    	null,
+    	0,
+    	"Kalendář"
+	],
+	[
+    	"Relative",
+    	null,
+    	0,
+    	"Relatvní čas"
+	],
+	[
+    	"Formating",
+    	null,
+    	0,
+    	"Formátování"
+	]
+]

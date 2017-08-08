@@ -15,7 +15,7 @@ export const button = b.createComponent<IButtonData>({
         me.attrs = { type: 'button' };
         me.children = ctx.data.title;
     },
-    onClick(ctx: ICtx, ev: b.IBobrilMouseEvent): boolean {
+    onClick(ctx: ICtx): boolean {
         ctx.data.onClick();
         return true;
     }

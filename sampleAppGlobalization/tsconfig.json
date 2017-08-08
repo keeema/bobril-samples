@@ -21,8 +21,8 @@
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "experimentalDecorators": true,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "experimentalDecorators": true
     },
     "compileOnSave": false,
     "files": [

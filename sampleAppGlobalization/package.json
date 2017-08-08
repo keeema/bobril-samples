@@ -1,12 +1,10 @@
 {
-  "name": "sample-bobflux",
-  "version": "1.0.1",
+  "name": "sample-globalization",
+  "version": "1.0.0",
   "description": "",
   "typescript": {
     "main": "src/app.ts"
   },
-  "author": "keeema",
-  "license": "ISC",
   "bobril": {
     "compilerOptions": {
       "noImplicitAny": true,
@@ -18,9 +16,10 @@
       "strictNullChecks": true
     }
   },
+  "author": "keeema",
+  "license": "ISC",
   "dependencies": {
-    "bobflux": "^9.0.1",
-    "bobflux-monitor": "^3.0.2",
-    "bobril": "^7.3.2"
+    "bobril": "^7.3.2",
+    "bobril-g11n": "^3.3.3"
   }
 }
