@@ -3,12 +3,13 @@
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppBobflux)** 
 ### Introduction 
 In the [previous article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started), we have learned about how to create a page (view part of a web application) by bobril. In this article, we will learn how to add an application logic by **bobflux**. 
-- [Bobril - I - Getting Started](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started)
-- [Bobril - II - Bobflux Application Architecture](http://www.codeproject.com/Articles/1055921/Bobril-II-Bobflux-application-architecture)
-- [Bobril - III - Localizations and Formatting](http://www.codeproject.com/Articles/1058132/Bobril-III-Localizations-and-formatting)
-- [Bobril - IV - Routing](http://www.codeproject.com/Articles/1058609/Bobril-IV-Routing)
-- [Bobril - V - Bobril-build](https://www.codeproject.com/Articles/1167901/bobril-build)
-- [Bobril - VI - BobX Application Store Management](https://www.codeproject.com/Articles/1201171/Bobril-VI-BobX-Application-Store-Management)
+
+- [Bobril - I - Getting Started](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md)
+- [Bobril - II - Bobflux Application Architecture](https://github.com/keeema/bobril-samples/blob/master/articles/02_bobril-bobflux.md)
+- [Bobril - III - Localizations and Formatting](https://github.com/keeema/bobril-samples/blob/master/articles/03_bobril-localizations.md)
+- [Bobril - IV - Routing](https://github.com/keeema/bobril-samples/blob/master/articles/04_bobril-routing.md)
+- [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
+- [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
 
 ### Background 
 Bobflux is a pure functional frontend application architecture based on _flux_ and inspired by _reflux_ and _redux_. It is written by Karel Steinmetz (software developer in GMC Software Technology). The bobflux lifecycle can be described by the following picture: 
@@ -19,6 +20,7 @@ Bobflux is a pure functional frontend application architecture based on _flux_ 
     4. Actions change the state
 
 For more information, see [project pages](https://github.com/karelsteinmetz/bobflux/). 
+![Bobflux Flow](./images/bobflux.png)
 
 ### Let's start 
 
