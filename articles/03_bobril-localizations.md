@@ -21,7 +21,7 @@ It is inspired by Format.js and internally uses Moment.js.
 
 ### Examples
 
-At first, we need to have prepared _bobril-build_ on computer. Follow the steps in [first article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started) to perform bobril-build installation.
+At first, we need to have prepared _bobril-build_ on computer. Follow the steps in [first article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md) to perform bobril-build installation.
 
 Now you can start a new project again or use a predefined skeleton simpleApp from [bobril-build github repository](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Bobris/bobril-build/tree/master/examples/simpleApp).
 

@@ -12,13 +12,13 @@ In this article, we will learn how to handle routes definition by bobril embedde
 
 ### Background
 
-Bobril is a component-oriented framework written by Boris Letocha (software architect and developer in GMC Software Technology). For more information, [see the first article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started).
+Bobril is a component-oriented framework written by Boris Letocha (software architect and developer in GMC Software Technology). For more information, [see the first article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md).
 
 ### Using the Code
 
 #### Preparing Environment
 
-At first, we need to have prepared _bobril-build_ on computer. Follow the steps in [first article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started) to perform bobril-build installation.
+At first, we need to have prepared _bobril-build_ on computer. Follow the steps in [first article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md) to perform bobril-build installation.
 
 Now you can start a new project again or use a predefined skeleton simpleApp from [bobril-build github repository](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Bobris/bobril-build/tree/master/examples/simpleApp).
 
@@ -46,7 +46,7 @@ b.routes(
     ])
 );
 ```
-The whole application will be handled by a handler mainPage with sub-routes one and two on urls _'/one'_ and _'/two' _handled by handlers pageOne and pageTwo.
+The whole application will be handled by a handler mainPage with sub-routes one and two on urls _'/one'_ and _'/two'_ handled by handlers pageOne and pageTwo.
 
 The default handler pageOne will be used when no sub-route is specified. The url for page two contains a parameter specification after a second slash. It is defined by a colon and a name of the parameter. The question mark defines the parameter as optional. Route parameters can then be found in the handler's context at ctx.data.routeParams.
 
@@ -155,4 +155,4 @@ canActivate() {
 
 As you can see, the bobril framework contains really simple routing mechanism able to fulfill all standard requirements.
 
-[Download the full sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppRouting)[ ](https://www.codeproject.com/KB/scripting/1058609/simpleAppRouting.zip)for the whole application with all the mentioned functions.
+[Download the full sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppRouting) for the whole application with all the mentioned functions.

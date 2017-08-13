@@ -2,7 +2,7 @@
 
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppBobflux)** 
 ### Introduction 
-In the [previous article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started), we have learned about how to create a page (view part of a web application) by bobril. In this article, we will learn how to add an application logic by **bobflux**. 
+In the [previous article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md), we have learned about how to create a page (view part of a web application) by bobril. In this article, we will learn how to add an application logic by **bobflux**. 
 
 - [Bobril - I - Getting Started](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md)
 - [Bobril - II - Bobflux Application Architecture](https://github.com/keeema/bobril-samples/blob/master/articles/02_bobril-bobflux.md)
@@ -22,9 +22,9 @@ Bobflux is a pure functional frontend application architecture based on _flux_ 
 For more information, see [project pages](https://github.com/karelsteinmetz/bobflux/). 
 ![Bobflux Flow](./images/bobflux.png)
 
-### Let's start 
+### Let's start 
 
-We will create a simple TODO application. At first, we need to have prepared _bobril-build_ on computer. Follow the steps in [previous article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started) to perform bobril-build installation. 
+We will create a simple TODO application. At first, we need to have prepared _bobril-build_ on computer. Follow the steps in [previous article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md) to perform bobril-build installation. 
 
 Now you can start a new project again or use a predefined skeleton simpleApp from [bobril-build github repository](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Bobris/bobril-build/tree/master/examples/simpleApp). Following example will use it. To get final code [download the full sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppBobflux). 
 

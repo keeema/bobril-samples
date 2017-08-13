@@ -4,7 +4,7 @@
 
 ### Introduction
 
-In the [second article](http://www.codeproject.com/Articles/1055921/Bobril-II-Bobflux-application-architecture), we have created a simple ToDo application using bobflux framework. In this article, we will learn how to create such application in an easier way using the new framework [BobX](https://github.com/bobril/bobx).
+In the [second article](https://github.com/keeema/bobril-samples/blob/master/articles/02_bobril-bobflux.md), we have created a simple ToDo application using bobflux framework. In this article, we will learn how to create such application in an easier way using the new framework [BobX](https://github.com/bobril/bobx).
 
 - [Bobril - I - Getting Started](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md)
 - [Bobril - II - Bobflux Application Architecture](https://github.com/keeema/bobril-samples/blob/master/articles/02_bobril-bobflux.md)
@@ -20,7 +20,7 @@ BobX is MobX like library for managing application stores created by Boris Letoc
 
 ### Let's Start
 
-We will create a simple TODO application again. At first, we need to have prepared _bobril-build_ on computer. Follow the steps in the [first article](http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-started) to perform bobril-build installation.
+We will create a simple TODO application again. At first, we need to have prepared _bobril-build_ on computer. Follow the steps in the [first article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md) to perform bobril-build installation.
 
 Now you can start a new project again or use a predefined skeleton simpleApp from [bobril-build github repository](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Bobris/bobril-build/tree/master/examples/simpleApp).
 
