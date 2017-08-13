@@ -36,7 +36,7 @@ Let's start with a simple TypeScript (typed JavaScript) example - traditional H
 
 #### Installing Build System
 
-The easiest way is to use directly the prepard build system bobril-build, which contains optimalized functionality for building _bobril_ based applications, testing, translations, etc. Bobril-build requires node.js >= 6.*.* and npm >=3.*.*. To install bobril build, pass the following command to the command line:
+The easiest way is to use directly the prepard build system bobril-build, which contains optimalized functionality for building _bobril_ based applications, testing, translations, etc. Bobril-build requires node.js >= 6.x.x and npm >=3.x.x. To install bobril build, pass the following command to the command line:
 ``` bash
 npm i bobril-build -g
 ```

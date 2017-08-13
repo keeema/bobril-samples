@@ -14,9 +14,9 @@ In the [previous article](https://github.com/keeema/bobril-samples/blob/master/
 ### Background 
 Bobflux is a pure functional frontend application architecture based on _flux_ and inspired by _reflux_ and _redux_. It is written by Karel Steinmetz (software developer in GMC Software Technology). The bobflux lifecycle can be described by the following picture: 
 
-    1. Application has some **state**
+    1. Application has some state
     2. View is rendered according to this state
-    3. View calls actions with handlers created by **action creator**
+    3. View calls actions with handlers created by action creator
     4. Actions change the state
 
 For more information, see [project pages](https://github.com/karelsteinmetz/bobflux/). 

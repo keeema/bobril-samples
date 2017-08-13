@@ -71,8 +71,8 @@ This code will render a header, a line and the visual content of current active 
 Now, we need to define sub-pages and transitions between these pages. Bobril offers the following functions and interface for these purposes:
 
 - b.IRouteTransition - interface for a transition definition (target name, parameters etc.)
-- b.createRedirectReplace - creates IRouteTransition object for redirect **without **saving history
-- b.createRedirectPush - creates IRouteTransition object for redirect **with **saving history
+- b.createRedirectReplace - creates IRouteTransition object for redirect without saving history
+- b.createRedirectPush - creates IRouteTransition object for redirect with saving history
 - b.runTransition - runs a transition according to an input IRouteTransition object
 - b.link - changes an input IBobrilNode to a link to the route of a specified name and with specified optional params
 

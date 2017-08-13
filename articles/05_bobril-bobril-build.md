@@ -17,7 +17,7 @@ Bobril-build can be installed globally by command:
 ``` bash
 npm i bobril-build -g
 ```
-It requires node.js >= 6.*.* and npm >=3.*.*.
+It requires node.js >= 6.x.x and npm >=3.x.x.
 
 It can use optionally yarn package manager (recommanded). If yarn is not available, npm is used instead.
 
