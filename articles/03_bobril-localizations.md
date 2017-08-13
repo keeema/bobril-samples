@@ -91,8 +91,8 @@ To add translations it can be modified to the following:
 [
     "cs-CZ",
     [
-    "My name is {a}!",
-    null,
+        "My name is {a}!",
+        null,
         1,
         "Jmenuji se {a}!"
     ]
