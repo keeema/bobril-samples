@@ -25,7 +25,8 @@ The page content rendering is based on comparison of Virtual DOMs. The applicati
 Bobril is written by Boris Letocha (software architect and developer in GMC Software Technology).
 
 > Quote: Boris Letocha, author of the framework
-Besides size and speed benefits, bobril has some very useful features which you will not find elsewhere. For example transparent emulation pointer-events:none or user-select:none in all browsers down to IE9. Transparent unification of mouse and touch events across all supported browsers including Chrome, IE10, IE11. Another feature I call it "Virtual CSS" - you can define styles in JS and it will transparently build optimal CSS in runtime. Image spriting. Image recoloring. Tight integration with TypeScript. Bobril-build enhancing your code during compile time, does optimal bundling similar to Rollup. Bobril removed some of limitations of React like component root does not need to be just one element. Directly includes Router and Drag and drop features. And much much more.
+
+> Besides size and speed benefits, bobril has some very useful features which you will not find elsewhere. For example transparent emulation pointer-events:none or user-select:none in all browsers down to IE9. Transparent unification of mouse and touch events across all supported browsers including Chrome, IE10, IE11. Another feature I call it "Virtual CSS" - you can define styles in JS and it will transparently build optimal CSS in runtime. Image spriting. Image recoloring. Tight integration with TypeScript. Bobril-build enhancing your code during compile time, does optimal bundling similar to Rollup. Bobril removed some of limitations of React like component root does not need to be just one element. Directly includes Router and Drag and drop features. And much much more.
 
 You can find more detailed information and examples [here.](https://github.com/Bobris/Bobril)
 
