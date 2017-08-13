@@ -78,24 +78,24 @@ bb
 The first command creates a new translation file _translations/cs-CZ.json._. The second command adds the missing translations from the defaultly generated _en-US.js_ to _cs-CZ.json_ translation definition. The build with the b parameter runs only once and then stops. Finally the last command runs build of the application with tracking changes in the code and with an output to the local web server. The content of the created _json_ can be e.g.:
 ``` json
 [
-    "cs-CZ",
-    [
-        "My name is {a}!",
-        null,
-        1
-    ]
+    "cs-CZ",
+    [
+        "My name is {a}!",
+        null,
+        1
+    ]
 ]
 ```
 To add translations it can be modified to the following:
 ``` json
 [
-    "cs-CZ",
-    [
-        "My name is {a}!",
-        null,
-        1,
-        "Jmenuji se {a}!"
-    ]
+    "cs-CZ",
+    [
+    "My name is {a}!",
+    null,
+        1,
+        "Jmenuji se {a}!"
+    ]
 ]
 ```
 The specific parts of localization item represented as an array are:
