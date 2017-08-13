@@ -80,7 +80,7 @@ The first command creates a new translation file _translations/cs-CZ.json._. Th
 [
     "cs-CZ",
     [
-        "My name is {a}!",
+        "My name is {a}!",
         null,
         1
     ]
