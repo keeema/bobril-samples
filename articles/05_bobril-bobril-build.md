@@ -1,10 +1,13 @@
 [//]: <> (bobrilComIgnoreStart)
+
 # Bobril-build
+
 [//]: <> (bobrilComIgnoreEnd)
 
 ### Introduction
 
 [//]: <> (bobrilComIgnoreStart)
+
 In previous articles we were using some basic operations from bobril-build. This article describes bobril-build's possibilities in more detail.
 
 - [Bobril - I - Getting Started](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md)
@@ -13,6 +16,7 @@ In previous articles we were using some basic operations from bobril-build. This
 - [Bobril - IV - Routing](https://github.com/keeema/bobril-samples/blob/master/articles/04_bobril-routing.md)
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
+
 [//]: <> (bobrilComIgnoreEnd)
 
 Bobril-build is nodejs-based build system created for building single-page applications written in Typescript and with lot of optimalizations for bobril and bobril-g11n. It is designed for bobril applications but it can be used for all typescript applications in general. It is written by Boris Letocha (software architect and developer in GMC Software Technology).
