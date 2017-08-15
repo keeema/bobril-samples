@@ -1,12 +1,14 @@
 [//]: <> (bobrilComIgnoreStart)
+
 # Bobril - Getting Started
+
 [//]: <> (bobrilComIgnoreEnd)
 
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleBasic)**
-
  
 [//]: <> (bobrilComIgnoreStart)
-### Introduction
+
+### Introduction
 
 In this article, we will learn the basics about bobril and create a simple application with one component. Then, we will take a look at how to setup the project simply by the npm.
 
