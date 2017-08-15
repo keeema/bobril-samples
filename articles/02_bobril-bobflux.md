@@ -1,9 +1,13 @@
 [//]: <> (bobrilComIgnoreStart)
+
 # Bobflux
+
 [//]: <> (bobrilComIgnoreEnd)
+
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppBobflux)** 
 
 [//]: <> (bobrilComIgnoreStart)
+
 ### Introduction 
 In the [previous article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md), we have learned about how to create a page (view part of a web application) by bobril. In this article, we will learn how to add an application logic by **bobflux**. 
 
@@ -13,6 +17,7 @@ In the [previous article](https://github.com/keeema/bobril-samples/blob/master/
 - [Bobril - IV - Routing](https://github.com/keeema/bobril-samples/blob/master/articles/04_bobril-routing.md)
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
+
 [//]: <> (bobrilComIgnoreEnd)
 
 ### Background 
