@@ -1,7 +1,10 @@
+[//]: <> (bobrilComIgnoreStart)
 # BobX Application Store Management
+[//]: <> (bobrilComIgnoreEnd)
 
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleBobX)**
 
+[//]: <> (bobrilComIgnoreStart)
 ### Introduction
 
 In the [second article](https://github.com/keeema/bobril-samples/blob/master/articles/02_bobril-bobflux.md), we have created a simple ToDo application using bobflux framework. In this article, we will learn how to create such application in an easier way using the new framework [BobX](https://github.com/bobril/bobx).
@@ -12,6 +15,7 @@ In the [second article](https://github.com/keeema/bobril-samples/blob/master/ar
 - [Bobril - IV - Routing](https://github.com/keeema/bobril-samples/blob/master/articles/04_bobril-routing.md)
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
+[//]: <> (bobrilComIgnoreEnd)
 
 ### Background
 

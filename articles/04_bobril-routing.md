@@ -1,6 +1,10 @@
+[//]: <> (bobrilComIgnoreStart)
 # Bobril - Routing
+[//]: <> (bobrilComIgnoreEnd)
+
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppRouting)**
 
+[//]: <> (bobrilComIgnoreStart)
 In this article, we will learn how to handle routes definition by bobril embedded routing mechanism.
 
 - [Bobril - I - Getting Started](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md)
@@ -9,6 +13,7 @@ In this article, we will learn how to handle routes definition by bobril embedde
 - [Bobril - IV - Routing](https://github.com/keeema/bobril-samples/blob/master/articles/04_bobril-routing.md)
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
+[//]: <> (bobrilComIgnoreEnd)
 
 ### Background
 
