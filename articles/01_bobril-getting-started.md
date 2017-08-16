@@ -1,7 +1,13 @@
-# Bobril - Getting Started
-**[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleBasic)**
+[//]: <> (bobrilComIgnoreStart)
 
+# Bobril - Getting Started
+
+[//]: <> (bobrilComIgnoreEnd)
+
+**[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleBasic)**
  
+ 
+[//]: <> (bobrilComIgnoreStart)
 
 ### Introduction
 
@@ -13,6 +19,8 @@ In this article, we will learn the basics about bobril and create a simple appli
 - [Bobril - IV - Routing](https://github.com/keeema/bobril-samples/blob/master/articles/04_bobril-routing.md)
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
+
+[//]: <> (bobrilComIgnoreEnd)
 
 ### Background
 
