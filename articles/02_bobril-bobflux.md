@@ -1,12 +1,12 @@
-[//]: <> (bobrilComIgnoreStart)
+[//]: # (bobrilComIgnoreStart)
 
 # Bobflux
 
-[//]: <> (bobrilComIgnoreEnd)
+[//]: # (bobrilComIgnoreEnd)
 
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppBobflux)** 
 
-[//]: <> (bobrilComIgnoreStart)
+[//]: # (bobrilComIgnoreStart)
 
 ### Introduction 
 In the [previous article](https://github.com/keeema/bobril-samples/blob/master/articles/01_bobril-getting-started.md), we have learned about how to create a page (view part of a web application) by bobril. In this article, we will learn how to add an application logic by **bobflux**. 
@@ -18,7 +18,7 @@ In the [previous article](https://github.com/keeema/bobril-samples/blob/master/
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
 
-[//]: <> (bobrilComIgnoreEnd)
+[//]: # (bobrilComIgnoreEnd)
 
 ### Background 
 Bobflux is a pure functional frontend application architecture based on _flux_ and inspired by _reflux_ and _redux_. It is written by Karel Steinmetz (software developer in GMC Software Technology). The bobflux lifecycle can be described by the following picture: 
