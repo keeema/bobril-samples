@@ -24,7 +24,7 @@ In this article, we will learn the basics about bobril and create a simple appli
 
 ### Background
 
-Bobril is a component-oriented framework inspired by React and Mithril. It combines advantages from both of them. It is **fast, low size **framework with rendering based on Virtual DOM. The main focus is on speed and simplicity of code generation. Bobril is about 8x faster than react (see [vdom-benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)).
+Bobril is a component-oriented framework inspired by React and Mithril. It combines advantages from both of them. It is **fast, low size** framework with rendering based on Virtual DOM. The main focus is on speed and simplicity of code generation. Bobril is about 8x faster than react (see [vdom-benchmark](http://vdom-benchmark.github.io/vdom-benchmark/)).
 
 Content and behavior of any page can be defined simply by composing JavaScript objects.
 
@@ -55,7 +55,7 @@ bb plugins -i bb-tslint-plugin
 ```
 TSLint checks your TypeScript code for readability, maintainability, and functionality errors.
 
-Now we can start with creating the project. So create some folder, e.g. _sample1_, create an empty file, _index.ts _in this folder and pass the following commands in its root:
+Now we can start with creating the project. So create some folder, e.g. _sample1_, create an empty file _index.ts_ in this folder and pass the following commands in its root:
 ``` bash
 npm init
 npm i bobril --save

@@ -89,7 +89,7 @@ b.routes(
     b.route({ handler: mainPage })
 );
 ```
-Now, we have prepared the application state that can be modified by calling actions. Actions Actions change the state by a handler on a specific sub-state defined by the cursor. In our todo example, we will need to perform two actions: 
+Now, we have prepared the application state that can be modified by calling actions. Actions change the state by a handler on a specific sub-state defined by the cursor. In our todo example, we will need to perform two actions: 
 
     1. Change the current name of todo according to a textbox value
     2. Add the written todo to the list of todos
@@ -132,7 +132,7 @@ The changeTodoName action is defined by the function createAction from bobfl
 - If not, then we will return the original instance of the state.
 - If yes, then we will create a shallow copy of the state and return the modified copy.
 
-Bobflux follows the principles of **immutability** to keep the best performance. It compares an input state with an output state and if it is different, then it calls b.invalidate to re-render the view. It is necessary to take care about the copied object properties. If there is some referencial object like an array todos in the addTodo action, it has to be copied as well. Composing the Page with bobflux Now, we have everything prepared to be used on the page of the todo application. So let's change the _src/mainPage.ts_ to look like this:
+Bobflux follows the principles of **immutability** to keep the best performance. It compares an input state with an output state and if it is different, then it calls b.invalidate to re-render the view. It is necessary to take care about the copied object properties. If there is some referencial object like an array todos in the addTodo action, it has to be copied as well. Composing the Page with bobflux now, we have everything  prepared to be used on the page of the todo application. So let's change the _src/mainPage.ts_ to look like this:
 ``` javascript
 import * as b from 'bobril';
 import * as flux from 'bobflux';
@@ -166,8 +166,8 @@ export default mainPage;
 ```
 The components definition is not the subject of this article, so you can use definitions in the attached source code. 
 
-You can see that a page resolves the current application state by the function getState with defined todoAppCursor. It can be done this way because bobflux initiates rendering of the page on every change in the state. T
-he textbox and button components use the defined actions in their onChange and onClick callbacks so the user interactions from view initiates the action calls. 
+You can see that a page resolves the current application state by the function getState with defined todoAppCursor. It can be done this way because bobflux initiates rendering of the page on every change in the state.
+The textbox and button components use the defined actions in their onChange and onClick callbacks so the user interactions from view initiates the action calls. 
 
 And finally in the end of the render function is a mapped array of todos to 'p' tags with todo names. 
 
