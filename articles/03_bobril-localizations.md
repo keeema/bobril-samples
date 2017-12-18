@@ -1,12 +1,12 @@
-[//]: <> (bobrilComIgnoreStart)
+[//]: # (bobrilComIgnoreStart)
 
 # Bobril - Localizations and Formatting
 
-[//]: <> (bobrilComIgnoreEnd)
+[//]: # (bobrilComIgnoreEnd)
 
 **[Download sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppGlobalization)**
 
-[//]: <> (bobrilComIgnoreStart)
+[//]: # (bobrilComIgnoreStart)
 
 ### Introduction
 
@@ -19,7 +19,7 @@ In this article, we will learn how to localize our application or format a text 
 - [Bobril - V - Bobril-build](https://github.com/keeema/bobril-samples/blob/master/articles/05_bobril-bobril-build.md)
 - [Bobril - VI - BobX Application Store Management](https://github.com/keeema/bobril-samples/blob/master/articles/06_bobril-bobx.md)
 
-[//]: <> (bobrilComIgnoreEnd)
+[//]: # (bobrilComIgnoreEnd)
 
 ### Background
 
