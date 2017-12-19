@@ -1,0 +1,15 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "Bobril introduction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "keeema",
+  "license": "ISC",
+  "dependencies": {
+    "bobril": "^8.1.1",
+    "bobx": "^0.12.2"
+  }
+}

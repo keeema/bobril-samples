@@ -1,0 +1,19 @@
+slozka intro
+index.ts
+npm init
+bobril-build
+bobril
+Hello World
+pole
+h1 node = bobrilnode!
+pages\main.tsx
+nadpis bobril
+IMainCtx - counter
+korenovy div
+start
+stop
+destroy
+button - render, onclick
+IButtonData
+RESET
+redButtonStyle

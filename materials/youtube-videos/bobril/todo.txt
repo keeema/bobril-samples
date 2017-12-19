@@ -1,0 +1,12 @@
+pages/todo/todo.tsx s h2 nadpisem
+input.tsx - InputTextData InputTextCtx komponenta
+todo layout
+bobx - obrazek
+store.ts
+properties
+get
+decoratory
+add, remove
+pouziti v todo.tsx
+emptyValue - computed - memoizace
+shallow
