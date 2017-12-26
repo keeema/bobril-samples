@@ -1,5 +1,5 @@
 {
-  "name": "todo",
+  "name": "todo-bobrilstrap",
   "version": "1.0.0",
   "description": "Bobril introduction",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bobril": "^8.1.1",
+    "bobrilstrap": "^2.0.1",
     "bobx": "^0.12.2"
   }
 }

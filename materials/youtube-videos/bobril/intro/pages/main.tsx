@@ -1,8 +1,8 @@
 import * as b from "bobril";
-import Button from "../components/button";
+import { Button } from "../components/button";
 
 interface IMainCtx extends b.IBobrilCtx {
-  counter: 0;
+  counter: number;
   intervalId: number;
 }
 
@@ -14,9 +14,9 @@ export const Main = b.createVirtualComponent({
   render(ctx: IMainCtx, me: b.IBobrilNode) {
     me.children = (
       <div>
-        <h1>Bobril</h1>
+        <h1>Hello Bobril!</h1>
         <p>Counter: {ctx.counter.toString()}</p>
-        <Button title="RESET" onClick={() => reset(ctx)} />
+        <Button title="RESET" onClick={() => reset(ctx)} bold={true} />
       </div>
     );
   },
@@ -24,8 +24,6 @@ export const Main = b.createVirtualComponent({
     stop(ctx);
   }
 });
-
-export default Main;
 
 function start(ctx: IMainCtx) {
   ctx.counter = 0;
