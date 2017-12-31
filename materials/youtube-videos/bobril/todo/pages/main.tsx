@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import Button from "../components/button";
 import { Todo } from "./todo/todo";
 
 export const Main = b.createVirtualComponent({

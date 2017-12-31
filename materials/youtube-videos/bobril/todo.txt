@@ -1,12 +1,22 @@
+textbox.tsx 
+checkbox.tsx 
+pages/todo/form.tsx
+pages/todo/list.tsx
 pages/todo/todo.tsx s h2 nadpisem
-input.tsx - InputTextData InputTextCtx komponenta
 todo layout
 bobx - obrazek
 store.ts
 properties
 get
 decoratory
-add, remove
+add, remove, setCompleted
 pouziti v todo.tsx
 emptyValue - computed - memoizace
-shallow
+shallow, ref, ctx
+
+vytvorit intro-bobx
+IMainCtx => MainCtx
+presunout funkce
+pridat observable
+odstranit invalidate
+odstranit init

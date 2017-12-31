@@ -1,7 +1,7 @@
 import * as b from "bobril";
-import { InputText } from "../../components/input";
-import { Button } from "../../components/button";
 import { todoStore } from "./store";
+import { Form } from "./form";
+import { List } from "./list";
 
 export const Todo = b.createVirtualComponent({
   id: "todo",
@@ -9,17 +9,8 @@ export const Todo = b.createVirtualComponent({
     me.children = (
       <div>
         <h2>TODO</h2>
-        <InputText
-          value={todoStore.currentValue}
-          onChange={newValue => (todoStore.currentValue = newValue)}
-        />
-        <Button title="ADD" onClick={() => todoStore.add()} />
-        {todoStore.items.map((item, index) => (
-          <p>
-            <span>{item}</span>
-            <Button title="REMOVE" onClick={() => todoStore.remove(index)} />
-          </p>
-        ))}
+        <Form />
+        <List />
       </div>
     );
   }
