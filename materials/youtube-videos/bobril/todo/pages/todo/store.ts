@@ -17,7 +17,6 @@ export class TodoStore {
   add() {
     if (this.isValueEmpty) return;
     this._items.unshift({
-      id: "",
       completed: false,
       title: this.currentValue
     });
