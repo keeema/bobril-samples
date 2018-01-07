@@ -9,7 +9,9 @@ export const Main = b.createVirtualComponent({
       <bs.Container>
         <bs.Navbar>
           <bs.Container>
-            <bs.NavbarBrand>Bobril</bs.NavbarBrand>
+            <bs.NavbarHeader>
+              <bs.NavbarBrand>Bobril</bs.NavbarBrand>
+            </bs.NavbarHeader>
           </bs.Container>
         </bs.Navbar>
         <bs.Main>
