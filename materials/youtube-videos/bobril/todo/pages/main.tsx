@@ -12,5 +12,3 @@ export const Main = b.createVirtualComponent({
     );
   }
 });
-
-export default Main;

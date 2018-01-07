@@ -1,5 +1,30 @@
-npm i bobrilstrap
-main.tsx
 bobrilstrap.com
-form.tsx
 
+npm i bobrilstrap --save
+index.ts - import, bs.init
+main.tsx 
+  - import
+  - container 
+    - navbar - jeho container - navbarbrand
+    - main - jeho container - todo
+      - conainer dat style={bs.typography.textCenter}
+form.tsx
+  - import
+  - row
+    - <bs.Col span={12} size={bs.Size.Lg}>
+      - inputgroup
+          - inputText
+            -input group btn
+              -button - disabled option success
+              
+ list.tsx
+  - import
+  - table - tbody
+    - items => tr
+      - td left - inputcheckbox checked onchange
+      - td completed - {item.title}
+      - td right - button
+
+stylovani - bobrilstrap.com
+
+odebrat default main

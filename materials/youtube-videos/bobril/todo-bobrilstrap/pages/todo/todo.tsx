@@ -1,22 +1,16 @@
 import * as b from "bobril";
-import { InputText } from "../../components/input";
-import { Button } from "../../components/button";
 import { todoStore } from "./store";
 import { Form } from "./form";
+import { List } from "./list";
 
 export const Todo = b.createVirtualComponent({
   id: "todo",
   render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
     me.children = (
       <div>
-        <h2>TODO</h2>
+        <h1>TODO</h1>
         <Form />
-        {todoStore.items.map((item, index) => (
-          <p>
-            <span>{item}</span>
-            <Button title="REMOVE" onClick={() => todoStore.remove(index)} />
-          </p>
-        ))}
+        <List />
       </div>
     );
   }

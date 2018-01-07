@@ -1,9 +1,11 @@
 import * as b from "bobril";
 import * as bs from "bobrilstrap";
+import { Textbox } from "../../components/textbox";
+import { Button } from "../../components/button";
 import { todoStore } from "./store";
 
 export const Form = b.createVirtualComponent({
-  id: "form",
+  id: "todo-form",
   render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
     me.children = (
       <bs.Row>
@@ -17,8 +19,8 @@ export const Form = b.createVirtualComponent({
               <bs.Button
                 label="ADD"
                 onClick={() => todoStore.add()}
-                disabled={todoStore.isValueEmpty}
                 option={bs.ButtonOption.Success}
+                disabled={todoStore.isValueEmpty}
               />
             </bs.InputGroupBtn>
           </bs.InputGroup>

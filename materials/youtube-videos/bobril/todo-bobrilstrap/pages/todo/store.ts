@@ -1,10 +1,11 @@
 import { observable, computed } from "bobx";
+import { IItem } from "./item";
 
 export class TodoStore {
   @observable currentValue: string = "";
-  @observable.shallow private _items: string[] = [];
+  @observable private _items: IItem[] = [];
 
-  get items(): string[] {
+  get items(): IItem[] {
     return this._items;
   }
 
@@ -15,12 +16,19 @@ export class TodoStore {
 
   add() {
     if (this.isValueEmpty) return;
-    this._items.unshift(this.currentValue);
+    this._items.unshift({
+      completed: false,
+      title: this.currentValue
+    });
     this.currentValue = "";
   }
 
   remove(index: number) {
     this._items.splice(index, 1);
+  }
+
+  setCompleted(index: number, completed: boolean) {
+    this._items[index].completed = completed;
   }
 }
 
