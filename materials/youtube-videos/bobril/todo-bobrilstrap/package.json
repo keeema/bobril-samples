@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bobril": "^8.1.1",
-    "bobrilstrap": "^2.1.0",
+    "bobrilstrap": "^3.0.0",
     "bobx": "^0.12.2"
   }
 }
