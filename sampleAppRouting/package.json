@@ -7,18 +7,17 @@
   },
   "bobril": {
     "compilerOptions": {
-      "noImplicitAny": true,
-      "noImplicitThis": true,
+      "declaration": true,
+      "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "strictNullChecks": true
+      "noFallthroughCasesInSwitch": true
     }
   },
   "author": "keeema",
   "license": "",
   "dependencies": {
-    "bobril": "^7.3.2"
+    "bobril": "^8.10.1"
   }
 }

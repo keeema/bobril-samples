@@ -1,21 +1,21 @@
-import * as flux from 'bobflux';
+import * as flux from "bobflux";
 
 export interface ITodoAppState extends flux.IState {
-    todos: string[];
-    todoName: string;
+  todos: string[];
+  todoName: string;
 }
 
 export const todoAppCursor: flux.ICursor<ITodoAppState> = {
-    key: ''
+  key: ""
 };
 
 export const todoNameCursor: flux.ICursor<string> = {
-    key: 'todoName'
+  key: "todoName"
 };
 
 export function createDefaultTodoAppState(): ITodoAppState {
-    return {
-        todos: [],
-        todoName: ''
-    };
+  return {
+    todos: [],
+    todoName: ""
+  };
 }

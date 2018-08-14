@@ -40,18 +40,16 @@ Following example will use it. To get final code [download the full sample](h
 Type to the command line:
 ``` bash
 npm i bobril-g11n --save
-bb
+bb2
 ```
 Now change the _app.ts_ file and change it to look like this:
 ``` javascript
-import * as b from 'bobril';
-import { mainPage } from './mainPage';
-import { initGlobalization } from 'bobril-g11n';
+import * as b from "bobril";
+import { mainPage } from "./mainPage";
+import { initGlobalization } from "bobril-g11n";
 
-initGlobalization({ defaultLocale: 'en-US' }).then(() =&gt; {
-    b.routes(
-        b.route({ handler: mainPage })
-    );
+initGlobalization({ defaultLocale: "en-US" }).then(() => {
+  b.routes(b.route({ handler: mainPage }));
 });
 ```
 This code will import and call initGlobalization function. Its argument IG11NConfig defines the default locale and optionally the function for getting the path to the localized files. 
@@ -62,7 +60,7 @@ The initGlobalization function returns a Promise object. Initialization of t
 
 The next step is to import all necessary functions for example by adding the following lines to the _mainPage.ts_ file:
 ``` javascript
-import { t, f, getLocale, setLocale } from 'bobril-g11n';
+import { t, f, getLocale, setLocale } from "bobril-g11n";
 ```
 Now, we have everything prepared for trying out the examples. You can remove the me.children content in a render function of the page component in _mainPage.ts_ file and use it for trying out the examples.
 
@@ -73,17 +71,17 @@ Bobril-globalization package contains a _t_ function with these arguments: 
 - optional params object defining the values for the message pattern
 - optional hint
 ``` javascript
-t('Hello World!'); // Hello World!
+t("Hello World!"); // Hello World!
 ```
-Bobril-build takes all usings of t('some string') in code and replaces it by e.g. t(125) where 125 is the index of 'some string' constant in the array of localized strings. This array is placed in every localization file and corresponds to the array in the generated _en-US.js._
+Bobril-build takes all usages of t('some string') in code and replaces it by e.g. t(125) where 125 is the index of 'some string' constant in the array of localized strings. This array is placed in every localization file and corresponds to the array in the generated _en-US.js._
 
 To add a new localization definition just type the command:
 ``` bash
-bb t -a cs-CZ
-bb b -u 1
-bb
+bb2 t -a cs-CZ
+bb2 b -u 1
+bb2
 ```
-The first command creates a new translation file _translations/cs-CZ.json._. The second command adds the missing translations from the defaultly generated _en-US.js_ to _cs-CZ.json_ translation definition. The build with the b parameter runs only once and then stops. Finally the last command runs build of the application with tracking changes in the code and with an output to the local web server. The content of the created _json_ can be e.g.:
+The first command creates a new translation file _translations/cs-CZ.json._. The second command adds the missing translations from the default generated _en-US.js_ to _cs-CZ.json_ translation definition. The build with the b parameter runs only once and then stops. Finally the last command runs build of the application with tracking changes in the code and with an output to the local web server. The content of the created _json_ can be e.g.:
 ``` json
 [
     "cs-CZ",
@@ -121,7 +119,7 @@ To see all possible build options use the -h parameter for bb command.
 
 To change the locale, we can use the following code:
 ``` javascript
-setLocale('cs-CZ');
+setLocale("cs-CZ");
 ```
 This code will change the locale and render the page with specific translations. To get the current locale, we can use a function getLocale.
 
@@ -129,56 +127,56 @@ This code will change the locale and render the page with specific translations.
 
 We can simply add placeholders to use variables in our text patterns:
 ``` javascript
-t('My name is {a}!', { a: 'Tomas' }); // My name is Tomas!
+t("My name is {a}!", { a: "Tomas" }); // My name is Tomas!
 ```
 #### Ordinal
 
 To set localized ordinal, use the selectordinal pattern:
 ``` javascript
-t('you are in {floor, selectordinal, =0{ground} one{#st} two{#nd} few{#rd} other{#th}} floor', { floor: 2 });
+t("You are in {floor, selectordinal, =0{ground} one{#st} two{#nd} few{#rd} other{#th}} floor", { floor: 2 });
 // you are in 2nd floor
 ```
 The # character is replaced by the floor property in the params object.
 
 #### Plural
 
-The similiar plural pattern is used to define localized plurals:
+The similar plural pattern is used to define localized plurals:
 ``` javascript
-t('here {floor, plural, =0{is no floor} =1{is # floor} other{are # floors}}', { floor: 2 });
+t("here {floor, plural, =0{is no floor} =1{is # floor} other{are # floors}}", { floor: 2 });
 // here are 2 floors
 ```
 #### Select
 
 To select a specific value according to some input string, we can use the select pattern:
 ``` javascript
-t('famous {gender, select, female {woman} male {man} other {person}}', { gender: 'female' });
+t("famous {gender, select, female {woman} male {man} other {person}}", { gender: "female" });
 // famous woman
 ```
 #### Number
 
 We can use a number pattern to keep numbers in culture specific formatting or to define our own format:
 ``` javascript
-t('{arg, number}', { arg: 1.234 }); // 1.234 in en
-t('{arg, number, custom, format:{0.0000}}', { arg: 1.234 }); // 1.2340 - in en
+t("{arg, number}", { arg: 1.234 }); // 1.234 in en
+t("{arg, number, custom, format:{0.0000}}", { arg: 1.234 }); // 1.2340 - in en
 ```
 #### Date and Time
 
 The date and time patterns work the same way and can be used in the following way:
 ``` javascript
-t('{a, date, lll}', { a: new Date(2000, 0, 2) }); // Jan 2, 2000 12:00 AM - in en
-t('{a, date, custom, format:{DD MM}}', { a: new Date(2000, 0, 2) }); // 02 01 - in en
-t('{a, date, custom, format:{{myformat}} }', 
-{ a: new Date(2000, 0, 2), myformat: 'ddd' }); // Sun - in en
+t("{a, date, lll}", { a: new Date(2000, 0, 2) }); // Jan 2, 2000 12:00 AM - in en
+t("{a, date, custom, format:{DD MM}}", { a: new Date(2000, 0, 2) }); // 02 01 - in en
+t("{a, date, custom, format:{{myFormat}} }", 
+{ a: new Date(2000, 0, 2), myFormat: 'ddd' }); // Sun - in en
 ```
 The specific format definitions can be found in the [Moment.js documentation.](http://momentjs.com/docs/#/displaying/format/)
 
 It can also be defined in a calendar format:
 ``` javascript
-t('{a, time, calendar}', { a: Date.now() + 24 * 60 * 60 * 1000 }); // Tomorrow at 4:27 PM - in en
+t("{a, time, calendar}", { a: Date.now() + 24 * 60 * 60 * 1000 }); // Tomorrow at 4:27 PM - in en
 ```
 or as a relative from now:
 ``` javascript
-t('{a, time, relative}', { a: Date.now() - 100000 }); // 2 minutes ago - in en
+t("{a, time, relative}", { a: Date.now() - 100000 }); // 2 minutes ago - in en
 ```
 For more examples [download the full sample](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/keeema/bobril-samples/tree/master/sampleAppGlobalization).
 

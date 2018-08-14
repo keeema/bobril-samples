@@ -9,18 +9,17 @@
   "license": "ISC",
   "bobril": {
     "compilerOptions": {
-      "noImplicitAny": true,
-      "noImplicitThis": true,
+      "declaration": true,
+      "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "strictNullChecks": true
+      "noFallthroughCasesInSwitch": true
     }
   },
   "dependencies": {
     "bobflux": "^9.0.1",
-    "bobflux-monitor": "^3.0.2",
-    "bobril": "^7.3.2"
+    "bobflux-monitor": "^4.0.0",
+    "bobril": "^8.10.1"
   }
 }

@@ -1,16 +1,16 @@
-import * as b from 'bobril';
+import * as b from "bobril";
 
 export interface IHeaderData {
-    children?: b.IBobrilNode;
+  children?: b.IBobrilNode;
 }
 
 interface IHeaderCtx extends b.IBobrilCtx {
-    data: IHeaderData;
+  data: IHeaderData;
 }
 
 export const h1 = b.createComponent<IHeaderData>({
-    render(ctx: IHeaderCtx, me: b.IBobrilNode) {
-        me.tag = 'h1';
-        me.children = ctx.data.children;
-    }
+  render(ctx: IHeaderCtx, me: b.IBobrilNode) {
+    me.tag = "h1";
+    me.children = ctx.data.children;
+  }
 });

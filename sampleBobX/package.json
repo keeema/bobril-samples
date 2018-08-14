@@ -13,18 +13,16 @@
   "license": "ISC",
   "bobril": {
     "compilerOptions": {
-      "noImplicitAny": true,
-      "noImplicitThis": true,
+      "declaration": true,
+      "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "strictNullChecks": true,
-      "experimentalDecorators": true
+      "noFallthroughCasesInSwitch": true
     }
   },
   "dependencies": {
-    "bobril": "^7.4.0",
-    "bobx": "^0.11.0"
+    "bobril": "^8.10.1",
+    "bobx": "^0.13.2"
   }
 }
