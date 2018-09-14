@@ -41,7 +41,7 @@ Run the following commands in the root of application folder:
 ``` bash
 npm i
 npm i bobx --save
-bb2
+bb
 ````
 
 ### Store

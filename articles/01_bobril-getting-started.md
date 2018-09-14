@@ -46,7 +46,7 @@ Let's start with a simple TypeScript (typed JavaScript) example - traditional H
 The easiest way is to use directly the prepared build system bobril-build, which contains optimized functionality for building *bobril* based applications, testing, translations, etc. Bobril-build requires node.js >= 8.x.x and npm >=5.x.x. To install bobril build, pass the following command to the command line:
 
 ```bash
-npm i bobril-build-core -g
+npm i bobril-build -g
 ```
 
 <!---
@@ -63,7 +63,7 @@ Now we can start with creating the project. So create some folder, e.g. *sample
 ```bash
 npm init
 npm i bobril --save
-bb2
+bb
 ```
 
 These commands will:
@@ -207,7 +207,7 @@ Bobril contains lots of other really useful functions like styleDef to define 
 To build, minify and bundle your application to *dist* folder, just type the command:
 
 ```bash
-bb2 b
+bb b
 ```
 
 For more information about bobril and bobril-build, please visit the github pages below:

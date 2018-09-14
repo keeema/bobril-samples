@@ -19,19 +19,19 @@ In previous articles we were using some basic operations from bobril-build. This
 
 [//]: # "bobrilComIgnoreEnd"
 
-Bobril-build is nodejs and .NET core based build system created for building single-page applications written in Typescript and with lot of optimizations for bobril and bobril-g11n. It is designed for bobril applications but it can be used for all typescript applications in general. It is written by Boris Letocha (software architect and developer in GMC Software Technology). Package **bobril-build-core** is just a wrapper which downloads specific version of builder (latest if not defined) and runs a build of your application.
+Bobril-build is .NET Core based build system created for building single-page applications written in Typescript and with lot of optimizations for bobril and bobril-g11n. It is designed for bobril applications but it can be used for all Typescript applications in general. It is written by Boris Letocha (software architect and developer in GMC Software Technology). Package **bobril-build** is just a wrapper which downloads specific version of builder (latest if not defined) and runs a build of your application.
 
 Bobril-build should be installed globally by command:
 
 ```bash
-npm i bobril-build-core -g
+npm i bobril-build -g
 ```
 
 It requires node.js >= 8.x.x and npm >=5.x.x.
 
 It can use optionally yarn package manager. If yarn is not available, npm is used instead.
 
-Bobril-build does lot for the best Developer Experience. In general, to start development you need only to install global **bobril-build-core** (only once), initialize npm package, create *index.ts* file and start the bb2 command. It starts self-hosting server with distribution stored in memory (good for SSD drives), watches files for changes, runs tests, provides sourcemaps and so on.
+Bobril-build does lot for the best Developer Experience. In general, to start development you need only to install global **bobril-build** (only once), initialize npm package, create *index.ts* file and start the bb command. It starts self-hosting server with distribution stored in memory (good for SSD drives), watches files for changes, runs tests, provides sourcemaps and so on.
 
 But bobril-build offers much more. It can perform:
 
@@ -50,17 +50,17 @@ But bobril-build offers much more. It can perform:
 
 ### Basic commands
 
-bb2 - Runs build in interactive mode. Distribution is available on self-hosting server on http://localhost:8080. Files are served from memory. Build information are available on [http://localhost:8080/bb](http://localhost:8080/bb). It also runs tests. To start another testing agent point any browser to [http://localhost:8080/bb/test](http://localhost:8080/bb/test). If you want to debug tests open [http://localhost:8080/test.html](http://localhost:8080/test.html), any failed asserts throws exceptions so it is easy to stop on them.
+bb - Runs build in interactive mode. Distribution is available on self-hosting server on http://localhost:8080. Files are served from memory. Build information are available on [http://localhost:8080/bb](http://localhost:8080/bb). It also runs tests. To start another testing agent point any browser to [http://localhost:8080/bb/test](http://localhost:8080/bb/test). If you want to debug tests open [http://localhost:8080/test.html](http://localhost:8080/test.html), any failed asserts throws exceptions so it is easy to stop on them.
 
-bb2 -h, --help - Basic bobril-build help
+bb -h, --help - Basic bobril-build help
 
-bb2 <command> -h - Help for specific command
+bb <command> -h - Help for specific command
 
 ### Tests
 
 Bobril-build runs test files with suffix *spec.ts*. It automatically provides jasmine.d.ts to these spec files.
 
-bb2 test [options] - Just runs test once in chrome.
+bb test [options] - Just runs test once in chrome.
 
 #### Options
 
@@ -70,7 +70,7 @@ bb2 test [options] - Just runs test once in chrome.
 
 Bobril-build provides set of tools for managing translations.
 
-bb2 translation|t [options] - Translations management.
+bb translation|t [options] - Translations management.
 
 #### Options
 
@@ -78,7 +78,7 @@ bb2 translation|t [options] - Translations management.
 
 -r, --removelang <lang> - Removes language.
 
-<!---e, --export <fileName> - Export untranslated languages to specific file.
+---e, --export <fileName> - Export untranslated languages to specific file.
 
 Mainly used for translation agencies. Use with -l option. Each item is listed in format
 
@@ -97,17 +97,16 @@ T:Translated message
 -u, --union <sourcePath1,sourcePath2,destinationPath>  - Makes union from paths.
 
 -s, --subtract <sourcePath1,sourcePath2,destinationPath> - Makes subtract of paths.
--->
 
 To update items in .json file in translations according to your code you must use command
 
-bb2 b -u 1 (more in chapter *Build commands*)
+bb b -u 1 (more in chapter *Build commands*)
 
 ### Build commands
 
 Bobril builds allows to manage build process by parameters.
 
-bb2 build|b [options] Full build including all mentioned operations. Builds just once, serves generated files to dist folder and stops.
+bb build|b [options] Full build including all mentioned operations. Builds just once, serves generated files to dist folder and stops.
 
 #### Options
 
@@ -149,7 +148,7 @@ It simply does not minify.
 
 Bobril-build allows you to use external plugins (e.g. [bb-tslint-plugin](https://github.com/saryn/bb-tslint-plugin)) which runs in the final part of bobril-build process. To manage such plugins use following commands:
 
-bb2 plugins [options]
+bb plugins [options]
 
 #### Options
 
@@ -172,7 +171,7 @@ Bobril-build can be configured by options defined in *package.json*:
     "main": "pathToMain.ts" // index.ts by default
   },
   "bobril": {
-    "bbVersion": "0.45.0", // version of bobril-build-core use for building
+    "bbVersion": "0.45.0", // version of bobril-build use for building
     "tsVersion": "3.0.1", // version of TS use for build
     "dir": "name of directory where to place release default is dist",
     "resourcesAreRelativeToProjectDir": false, // this is default
@@ -214,7 +213,7 @@ Just add following code to your module:
 declare let DEBUG: boolean;
 ```
 
-and bobril-build will assign such variable with value saying you are in debug mode (bb2) or in production code (bb2 b).
+and bobril-build will assign such variable with value saying you are in debug mode (bb) or in production code (bb b).
 
 ## GitHub
 
