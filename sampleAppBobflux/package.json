@@ -20,6 +20,6 @@
   "dependencies": {
     "bobflux": "^9.0.1",
     "bobflux-monitor": "^4.0.0",
-    "bobril": "^8.10.1"
+    "bobril": "^8.17.1"
   }
 }

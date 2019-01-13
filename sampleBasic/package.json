@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bobril": "^8.10.1"
+    "bobril": "^8.17.1"
   },
   "bobril": {
     "compilerOptions": {

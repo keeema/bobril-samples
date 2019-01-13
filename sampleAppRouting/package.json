@@ -18,6 +18,6 @@
   "author": "keeema",
   "license": "",
   "dependencies": {
-    "bobril": "^8.10.1"
+    "bobril": "^8.17.1"
   }
 }

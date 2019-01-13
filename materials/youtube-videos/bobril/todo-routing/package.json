@@ -9,8 +9,8 @@
   "author": "keeema",
   "license": "ISC",
   "dependencies": {
-    "bobril": "^8.1.1",
-    "bobrilstrap": "^3.0.0",
-    "bobx": "^0.12.2"
+    "bobril": "^8.17.1",
+    "bobrilstrap": "^3.0.4",
+    "bobx": "^0.23.1"
   }
 }

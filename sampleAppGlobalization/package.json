@@ -6,6 +6,7 @@
     "main": "src/app.ts"
   },
   "bobril": {
+    "tsVersion": "3.2.2",
     "compilerOptions": {
       "declaration": true,
       "strict": true,
@@ -18,7 +19,7 @@
   "author": "keeema",
   "license": "ISC",
   "dependencies": {
-    "bobril": "^8.10.1",
-    "bobril-g11n": "^4.2.0"
+    "bobril": "^8.17.1",
+    "bobril-g11n": "^4.4.1"
   }
 }
