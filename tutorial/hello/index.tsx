@@ -5,7 +5,7 @@ interface IHelloData {
 }
 
 class Hello extends b.Component<IHelloData> {
-  render() {
+  render(): b.IBobrilChildren {
     return (
       <>
         <h1>Hello {this.data.name}</h1>
