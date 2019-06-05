@@ -39,6 +39,8 @@ Input data are accessible by `this.data`.
 
 The last line initialize the `bobril` application with its entry node.
 
+<!-- # from-file: ./examples/hello/index.tsx -->
+
 ```jsx
 import * as b from "bobril";
 
@@ -60,6 +62,7 @@ class Hello extends b.Component<IHelloData> {
 }
 
 b.init(() => <Hello name="Developer" />);
+
 ```
 
 ## Bring it to life with Stateful Component
@@ -75,6 +78,8 @@ This example also contains usage of another life-cycle methods:
 Timer component use them for setup and clear the interval.
 
 The `<button>` html element is used to reset the timer. Reset is implemented as a `callback` for handling normalized `onChange` event of the element. This normalized event handlers are automatically accessible on html elements or their handling can be written as a public life-cycle method of `Component` class delegated up as a callback in input data.
+
+<!-- # from-file: ./examples/timer/index.tsx -->
 
 ```jsx
 import * as b from "bobril";
