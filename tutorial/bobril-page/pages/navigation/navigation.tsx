@@ -8,7 +8,6 @@ import {
   Button,
   ButtonVariant,
   NavbarBrand,
-  Image,
   navStyles,
   helpers,
   NavbarCollapse,
@@ -28,8 +27,8 @@ export class Navigation extends b.Component<{}> {
           <NavbarHeader>
             <NavbarBrand>
               <div>
-                <Image
-                  src={b.asset("../../resources/bobril-logo-small2.png")}
+                <img
+                  src={b.asset("../../resources/bobril_logo_50x50.png")}
                   height={20}
                   style={positionedLogo}
                 />
@@ -53,17 +52,15 @@ export class Navigation extends b.Component<{}> {
                   onClick={() => this.handleMenuItemClick()}
                   active={b.isActive(routes.gettingStarted.name)}
                 >
-                  <b.Link name={routes.gettingStarted.name!}>
-                    <a>Get Started</a>
-                  </b.Link>
+                  <a href={b.urlOfRoute(routes.gettingStarted.name!)}>
+                    Get Started
+                  </a>
                 </NavbarNavItem>
                 <NavbarNavItem
                   onClick={() => this.handleMenuItemClick()}
                   active={b.isActive(routes.ecoSystem.name)}
                 >
-                  <b.Link name={routes.ecoSystem.name!}>
-                    <a>Eco-System</a>
-                  </b.Link>
+                  <a href={b.urlOfRoute(routes.ecoSystem.name!)}>Eco-System</a>
                 </NavbarNavItem>
               </NavbarNav>
               <NavbarNav style={navStyles.navbarRight}>
@@ -72,7 +69,7 @@ export class Navigation extends b.Component<{}> {
                     href="https://badge.fury.io/js/bobril"
                     target={Target.Blank}
                   >
-                    <Image
+                    <img
                       src="https://badge.fury.io/js/bobril.svg"
                       alt="npm version"
                       height={18}

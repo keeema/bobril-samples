@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "bobril": "^10.2.1",
-    "bobrilstrap": "^3.0.7",
+    "@types/marked": "^0.6.5",
+    "@types/prismjs": "^1.16.0",
+    "bobril": "^11.1.2",
+    "bobrilstrap": "^3.0.11",
     "bobx": "^0.27.1",
-    "bootswatch": "^3.4.1"
+    "bootswatch": "^3.4.1",
+    "marked": "^0.6.2",
+    "prismjs": "^1.16.0"
   },
   "devDependencies": {
     "bb-tslint-plugin": "^1.2.2"

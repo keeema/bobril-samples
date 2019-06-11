@@ -1,16 +1,30 @@
 import * as b from "bobril";
-import { Container, typography } from "bobrilstrap";
+import { Container, Jumbotron } from "bobrilstrap";
+import { Header } from "./header";
+import { ShortInfo } from "./shortInfo";
+import { MarkdownHtml } from "./markdownHtml";
+
+const getStarted = b.asset("../../resources/get-started.md");
 
 export class GettingStarted extends b.Component<{}> {
   render(): b.IBobrilChildren {
     return (
       <>
-        <Container style={typography.textCenter}>
-          <img src={b.asset("../../resources/bobril-logo.png")} />
-          <h1>Bobril</h1>
-          <p>some interesting text to hype</p>
+        <Jumbotron style={[closeToNavBar]}>
+          <Container>
+            <Header large />
+            <Header />
+            <ShortInfo />
+          </Container>
+        </Jumbotron>
+        <Container>
+          <MarkdownHtml path={getStarted} />
         </Container>
       </>
     );
   }
 }
+
+const closeToNavBar = { marginTop: -21 };
+
+export const paddingForHeaderBobril = { paddingTop: 45 };
