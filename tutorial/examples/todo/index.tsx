@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import { Layout } from "./components/layout";
 import { List, IItem } from "./components/list";
 import { Form } from "./components/form";
 
@@ -8,13 +7,11 @@ class Todo extends b.Component {
 
   render(): b.IBobrilChildren {
     return (
-      <Layout>
-        {{
-          header: <h1>TODO</h1>,
-          body: <List items={this._todos} />,
-          footer: <Form onSubmit={text => this.add(text)} />
-        }}
-      </Layout>
+      <>
+        <h1>TODO</h1>
+        <List items={this._todos} />
+        <Form onSubmit={text => this.add(text)} />
+      </>
     );
   }
 

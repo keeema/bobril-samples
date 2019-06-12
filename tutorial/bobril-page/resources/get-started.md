@@ -52,7 +52,6 @@ class Hello extends b.Component<IHelloData> {
 }
 
 b.init(() => <Hello name="Developer" />);
-
 ```
 
 ## Bring it to life with Stateful Component
@@ -108,4 +107,115 @@ class Timer extends b.Component {
 }
 
 b.init(() => <Timer />);
+```
+
+## Todo Application
+
+Combination of several `components` with input `data` and internal state allows to create full Todo application.
+
+Following component displays list of items given from its parent. It uses `key` attribute with unique id of item to assure clear identification of `<li>` bobril node . Otherwise it could cause mismatch of internat states.
+
+<!-- # from-file: ./examples/todo/components/list.tsx -->
+
+```tsx
+import * as b from "bobril";
+
+export interface IItem {
+  id: number;
+  text: string;
+}
+
+export interface IListData {
+  items: IItem[];
+}
+
+export function List(data: IListData): b.IBobrilNode {
+  return (
+    <ul>
+      {data.items.map(item => (
+        <ListItem {...item} />
+      ))}
+    </ul>
+  );
+}
+
+function ListItem(data: IItem): b.IBobrilNode {
+  return <li key={data.id}>{data.text}</li>;
+}
+```
+
+Next component consists of input elements to get data from user. The result is delegated up with event callback.
+
+<!-- # from-file: ./examples/todo/components/form.tsx -->
+
+```tsx
+import * as b from "bobril";
+
+export interface IFormData {
+  onSubmit(value: string): void;
+}
+
+export class Form extends b.Component<IFormData> {
+  private _value: string = "";
+
+  render(): b.IBobrilChildren {
+    return (
+      <>
+        <input
+          type="text"
+          value={this._value}
+          onChange={newValue => this.updateValue(newValue)}
+          onKeyUp={ev => ev.which === 13 && this.submit()}
+          style={spaceOnRight}
+        />
+        <button onClick={() => this.submit()}>OK</button>
+      </>
+    );
+  }
+
+  private updateValue(newValue: string): void {
+    this._value = newValue;
+    b.invalidate(this);
+  }
+
+  private submit(): boolean {
+    this.data.onSubmit(this._value);
+    this._value = "";
+    b.invalidate(this);
+    return true;
+  }
+}
+
+const spaceOnRight = b.styleDef({ marginRight: 5 });
+```
+
+Finally the main component maintains list of items composes the tree of final application.
+
+ <!-- # from-file: ./examples/todo/index.tsx -->
+
+```tsx
+import * as b from "bobril";
+import { List, IItem } from "./components/list";
+import { Form } from "./components/form";
+
+class Todo extends b.Component {
+  private _todos: IItem[] = [];
+
+  render(): b.IBobrilChildren {
+    return (
+      <>
+        <h1>TODO</h1>
+        <List items={this._todos} />
+        <Form onSubmit={text => this.add(text)} />
+      </>
+    );
+  }
+
+  private add(text: string): void {
+    this._todos.push({ id: Date.now(), text });
+    b.invalidate(this);
+  }
+}
+
+b.init(() => <Todo />);
 ```
