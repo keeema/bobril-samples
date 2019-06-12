@@ -54,6 +54,8 @@ class Hello extends b.Component<IHelloData> {
 b.init(() => <Hello name="Developer" />);
 ```
 
+[Preview example](./hello/index.html)
+
 ## Bring it to life with Stateful Component
 
 Component can work beside input data also with its internal state. This state is accessible by `this` keyword. To re-invoke render after change of some part of internal state the `b.invalidate(this)` function has to be called.
@@ -108,6 +110,8 @@ class Timer extends b.Component {
 
 b.init(() => <Timer />);
 ```
+
+[Preview example](./timer/index.html)
 
 ## Todo Application
 
@@ -219,3 +223,5 @@ class Todo extends b.Component {
 
 b.init(() => <Todo />);
 ```
+
+[Preview example](./todo/index.html)
