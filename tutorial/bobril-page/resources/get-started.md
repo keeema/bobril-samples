@@ -144,7 +144,7 @@ function ListItem(data: IItem): b.IBobrilNode {
 }
 ```
 
-Next component consists of input elements to get data from user. The result is delegated up with event callback.
+Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses virtual CSS definition to setup margin between elements.
 
 <!-- # from-file: ./examples/todo/components/form.tsx -->
 
