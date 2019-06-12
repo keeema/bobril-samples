@@ -66,7 +66,7 @@ This example also contains usage of another life-cycle methods:
 
 Timer component use them for setup and clear the interval.
 
-The `<button>` html element is used to reset the timer. Reset is implemented as a `callback` for handling normalized `onChange` event of the element. This normalized event handlers are automatically accessible on html elements or their handling can be written as a public life-cycle method of `Component` class delegated up as a callback in input data.
+The `<button>` html element is used to reset the timer. Reset is implemented as a `callback` (event delegation) for handling normalized `onChange` event of the element. This normalized event handlers are automatically accessible on html elements or their handling can be written as a public life-cycle method of `Component` class delegated up as a callback in input data.
 
 <!-- # from-file: ./examples/timer/index.tsx -->
 
@@ -111,7 +111,7 @@ b.init(() => <Timer />);
 
 ## Todo Application
 
-Combination of several `components` with input `data` and internal state allows to create full Todo application.
+Combination of several `components` with input `data`, `event delegation` and `internal state` allows to create full Todo application.
 
 Following component displays list of items given from its parent. It uses `key` attribute with unique id of item to assure clear identification of `<li>` bobril node . Otherwise it could cause mismatch of internat states.
 
@@ -144,7 +144,7 @@ function ListItem(data: IItem): b.IBobrilNode {
 }
 ```
 
-Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses virtual CSS definition to setup margin between elements.
+Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses `virtual CSS` created by `b.styleDef` definition to setup margin between elements.
 
 <!-- # from-file: ./examples/todo/components/form.tsx -->
 
@@ -189,7 +189,7 @@ export class Form extends b.Component<IFormData> {
 const spaceOnRight = b.styleDef({ marginRight: 5 });
 ```
 
-Finally the main component maintains list of items composes the tree of final application.
+Finally the main component maintains list of items and composes the tree of final application.
 
  <!-- # from-file: ./examples/todo/index.tsx -->
 
