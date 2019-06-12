@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-const tutorialPath = "./readme.md";
+const tutorialPath = "./bobril-page/resources/get-started.md";
 const newLineRegex = /\r?\n/;
 const externalFileRegex = /^(<!-- # from-file:)([\/\w\-. ]+)(\-\-\>)/gm;
 let tutorialContent = "";

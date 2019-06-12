@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
-var tutorialPath = "./readme.md";
+var tutorialPath = "./bobril-page/resources/get-started.md";
 var newLineRegex = /\r?\n/;
 var externalFileRegex = /^(<!-- # from-file:)([\/\w\-. ]+)(\-\-\>)/gm;
 var tutorialContent = "";

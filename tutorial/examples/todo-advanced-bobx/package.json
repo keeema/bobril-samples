@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "bobril": "^10.2.1",
+    "bobril": "^11.2.0",
     "bobx": "^0.27.1"
   },
   "devDependencies": {

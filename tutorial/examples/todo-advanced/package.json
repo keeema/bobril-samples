@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "bobril": "^10.2.1"
+    "bobril": "^11.2.0"
   },
   "devDependencies": {
     "bb-tslint-plugin": "^1.2.2"
