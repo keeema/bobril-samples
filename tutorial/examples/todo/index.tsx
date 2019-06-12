@@ -19,7 +19,7 @@ class Todo extends b.Component {
   }
 
   private add(text: string): void {
-    this._todos = [...this._todos, { id: Date.now(), text }];
+    this._todos.push({ id: Date.now(), text });
     b.invalidate(this);
   }
 }
