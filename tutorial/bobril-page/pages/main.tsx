@@ -16,11 +16,17 @@ export class Main extends b.Component<b.IRouteHandlerData> {
     );
   }
 
-  postInitDom(): void {
+  postRenderDom(): void {
     prismJs.highlightAll();
+    this.fixAnchors();
   }
 
-  postUpdateDom(): void {
-    prismJs.highlightAll();
+  private fixAnchors(): void {
+    const anchors = document.getElementsByTagName("a");
+    for (let i = 0; i < anchors.length; i++) {
+      if (!anchors[i].href) {
+        anchors[i].href = "javascript:void(0);";
+      }
+    }
   }
 }

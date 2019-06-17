@@ -13,6 +13,7 @@ b.asset("node_modules/bootswatch/sandstone/bootstrap.min.css");
 b.routes(
   b.route(routes.main, [
     b.route(routes.gettingStarted),
+    b.route(routes.moreTutorials),
     b.route(routes.ecoSystem),
     b.routeDefault(routes.gettingStarted)
   ])

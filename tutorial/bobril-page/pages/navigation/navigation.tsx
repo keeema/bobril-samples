@@ -61,6 +61,14 @@ export class Navigation extends b.Component<{}> {
                   active={b.isActive(routes.ecoSystem.name)}
                 >
                   <a href={b.urlOfRoute(routes.ecoSystem.name!)}>Eco-System</a>
+                </NavbarNavItem>{" "}
+                <NavbarNavItem
+                  onClick={() => this.handleMenuItemClick()}
+                  active={b.isActive(routes.moreTutorials.name)}
+                >
+                  <a href={b.urlOfRoute(routes.moreTutorials.name!)}>
+                    More Tutorials
+                  </a>
                 </NavbarNavItem>
               </NavbarNav>
               <NavbarNav style={navStyles.navbarRight}>

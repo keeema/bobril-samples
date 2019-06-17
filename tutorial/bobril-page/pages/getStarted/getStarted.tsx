@@ -1,10 +1,8 @@
 import * as b from "bobril";
-import { Container, Jumbotron } from "bobrilstrap";
+import { Container, Jumbotron, Size, Col } from "bobrilstrap";
 import { Header } from "./header";
 import { ShortInfo } from "./shortInfo";
-import { MarkdownHtml } from "./markdownHtml";
-
-const getStarted = b.asset("../../resources/get-started.md");
+import { Content } from "./content";
 
 export class GettingStarted extends b.Component<{}> {
   render(): b.IBobrilChildren {
@@ -18,7 +16,15 @@ export class GettingStarted extends b.Component<{}> {
           </Container>
         </Jumbotron>
         <Container>
-          <MarkdownHtml path={getStarted} />
+          <Col size={Size.Sm} span={12}>
+            <Content />
+          </Col>
+          {/* <Col size={Size.Sm} span={9}>
+            <SideBar
+              items={[{ targetId: "test", title: "Test" }]}
+              topTargetId="test"
+            />
+          </Col> */}
         </Container>
       </>
     );
@@ -26,5 +32,3 @@ export class GettingStarted extends b.Component<{}> {
 }
 
 const closeToNavBar = { marginTop: -21 };
-
-export const paddingForHeaderBobril = { paddingTop: 45 };

@@ -52,9 +52,18 @@ class Hello extends b.Component<IHelloData> {
 }
 
 b.init(() => <Hello name="Developer" />);
+
 ```
 
 [Preview example](./hello/index.html)
+
+Now just start `bobril-build` and let it watch your code for changes.
+
+```bash
+bb
+```
+
+To Preview you application visit http://localhost:8080 .
 
 ## Bring it to life with Stateful Component
 
@@ -146,6 +155,7 @@ export function List(data: IListData): b.IBobrilNode {
 function ListItem(data: IItem): b.IBobrilNode {
   return <li key={data.id}>{data.text}</li>;
 }
+
 ```
 
 Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses `virtual CSS` created by `b.styleDef` definition to setup margin between elements.
@@ -191,6 +201,7 @@ export class Form extends b.Component<IFormData> {
 }
 
 const spaceOnRight = b.styleDef({ marginRight: 5 });
+
 ```
 
 Finally the main component maintains list of items and composes the tree of final application.
@@ -222,6 +233,7 @@ class Todo extends b.Component {
 }
 
 b.init(() => <Todo />);
+
 ```
 
 [Preview example](./todo/index.html)

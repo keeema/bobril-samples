@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "..",
+    "outDir": "./dist",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
@@ -29,6 +29,6 @@
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./src/**/*"],
-  "files": ["./src/update-sources.ts"]
+  "include": ["./**/*.ts", "./node_modules/**/*"],
+  "files": ["update-sources.ts", "parse.ts", "common.ts"]
 }

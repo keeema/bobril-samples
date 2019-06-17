@@ -1,30 +1,25 @@
-import * as fs from "fs";
+import { readFile, save } from "./common";
 
-const tutorialPath = "./bobril-page/resources/get-started.md";
+const tutorialPaths: string[] = [
+  "./bobril-page/resources/get-started.md",
+  "./bobril-page/resources/more-tutorials.md"
+];
 const newLineRegex = /\r?\n/;
 const externalFileRegex = /^(<!-- # from-file:)([\/\w\-. ]+)(\-\-\>)/gm;
 let tutorialContent = "";
 
 function run() {
-  loadTutorial();
+  tutorialPaths.forEach(runForFile);
+}
+
+function runForFile(path: string) {
+  loadTutorial(path);
   removeCodeBlocks();
-  save();
-  console.info("Update successfully finished.");
+  save(tutorialContent, path);
+  console.info(`Update of ${path} successfully finished.`);
 }
 
-function readFile(path: string): string {
-  try {
-    const data = fs.readFileSync(path);
-    return data.toString();
-  } catch (e) {
-    console.error(`Reading file ${tutorialPath} failed:`);
-    console.error(e.stack);
-    process.abort();
-    return "";
-  }
-}
-
-function loadTutorial() {
+function loadTutorial(tutorialPath: string) {
   tutorialContent = readFile(tutorialPath);
   console.info(`Loading ${tutorialPath}`);
 }
@@ -67,17 +62,6 @@ function updateFromExternalFile(
     lastCodeEnd - i - 1,
     ...readFile(externalFile).split(newLineRegex)
   );
-}
-
-function save() {
-  try {
-    console.info(`Updating file ${tutorialPath}`);
-    fs.writeFileSync(tutorialPath, tutorialContent);
-  } catch (e) {
-    console.error(`Updating file ${tutorialPath} failed:`);
-    console.error(e.stack);
-    process.abort();
-  }
 }
 
 function getFileFromLine(line: string | undefined): string {

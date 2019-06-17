@@ -1,6 +1,5 @@
 import * as b from "bobril";
 import { typography, Row, Col, Size, hiddenStyles, Device } from "bobrilstrap";
-import { paddingForHeaderBobril } from "./getStarted";
 export function Header(data: { large?: boolean }): b.IBobrilNode {
   const styles = data.large
     ? [hiddenStyles(Device.Xs)]
@@ -34,3 +33,5 @@ export function Header(data: { large?: boolean }): b.IBobrilNode {
     </Row>
   );
 }
+
+const paddingForHeaderBobril = { paddingTop: 45 };

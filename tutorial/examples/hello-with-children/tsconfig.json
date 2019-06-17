@@ -30,8 +30,7 @@
     "resolveJsonModule": true
   },
   "files": [
-    "node_modules/bobril/jsx.d.ts",
-    "C:/Users/t.rut/.bbcore/tools/jasmine.d.ts"
+    "node_modules/bobril/jsx.d.ts"
   ],
   "include": [
     "**/*"
