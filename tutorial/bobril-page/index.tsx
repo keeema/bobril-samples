@@ -7,13 +7,12 @@ import "./node_modules/prismjs/components/prism-bash";
 import "./node_modules/prismjs/components/prism-jsx";
 import "./node_modules/prismjs/components/prism-tsx";
 import "./node_modules/prismjs/themes/prism-tomorrow.css";
-
 b.asset("node_modules/bootswatch/sandstone/bootstrap.min.css");
 
 b.routes(
   b.route(routes.main, [
-    b.route(routes.gettingStarted),
-    b.route(routes.moreTutorials),
+    routes.gettingStarted,
+    routes.moreTutorials,
     b.route(routes.ecoSystem),
     b.routeDefault(routes.gettingStarted)
   ])

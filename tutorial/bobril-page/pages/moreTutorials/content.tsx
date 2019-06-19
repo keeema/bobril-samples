@@ -1,30 +1,35 @@
 import * as b from "bobril";
+import { IItemData } from "../sidebar/sidebarItem";
 
 export class Content extends b.Component {
   static id: string = "more-tutorials";
   render(): b.IBobrilChildren {
-    return (
-      <>
-        <h1 id="more-tutorials">{`More tutorials`}</h1>
-        <p>
-          {`If you have finished `}
-          <a href="./get-started.md">{`Get Started`}</a>
-          {` section then you can continue with exploring more possibilities offered by bobril.`}
-        </p>
-        <h2 id="nesting-components">{`Nesting Components`}</h2>
-        <h3 id="simple-nesting">{`Simple nesting`}</h3>
-        <p>
-          {`Some components are created just because to wrap some other components (to add styling, additional functionality etc.). To deal with nesting in components tree there is a special `}
-          <code>input data</code>
-          {` property `}
-          <code>children</code>
-          {`. It can be defined manually as in example or inherited from interface `}
-          <code>b.IDataWithChildren</code>
-          {`.`}
-        </p>
+    return content;
+  }
+}
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+export const content: b.IBobrilNode = (
+  <>
+    <h1 id="more-tutorials">{`More tutorials`}</h1>
+    <p>
+      {`If you have finished `}
+      <a href="./get-started.md">{`Get Started`}</a>
+      {` section then you can continue with exploring more possibilities offered by bobril.`}
+    </p>
+    <h2 id="nesting-components">{`Nesting Components`}</h2>
+    <h3 id="simple-nesting">{`Simple nesting`}</h3>
+    <p>
+      {`Some components are created just because to wrap some other components (to add styling, additional functionality etc.). To deal with nesting in components tree there is a special `}
+      <code>input data</code>
+      {` property `}
+      <code>children</code>
+      {`. It can be defined manually as in example or inherited from interface `}
+      <code>b.IDataWithChildren</code>
+      {`.`}
+    </p>
+
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 
 interface IHelloData {
   name: string;
@@ -50,24 +55,24 @@ b.init(() => (
   </Hello>
 ));
 `}</code>
-        </pre>
-        <p>
-          <a href="./hello-with-children/index.html">{`Preview example`}</a>
-        </p>
-        <h3 id="better-todo-with-slots-for-layout">{`Better Todo with slots for layout`}</h3>
-        <p>{`Next example improves previous Todo example and shows more complex implementation with special component for Layout.`}</p>
-        <p>
-          {`Following list allows to check state of task in todo list. `}
-          <code>Checked</code>
-          {` event is delegated up with callback `}
-          <code>onItemChecked</code>
-          {` in `}
-          <code>input data</code>
-          {`.`}
-        </p>
+    </pre>
+    <p>
+      <a href="./hello-with-children/index.html">{`Preview example`}</a>
+    </p>
+    <h3 id="better-todo-with-slots-for-layout">{`Better Todo with slots for layout`}</h3>
+    <p>{`Next example improves previous Todo example and shows more complex implementation with special component for Layout.`}</p>
+    <p>
+      {`Following list allows to check state of task in todo list. `}
+      <code>Checked</code>
+      {` event is delegated up with callback `}
+      <code>onItemChecked</code>
+      {` in `}
+      <code>input data</code>
+      {`.`}
+    </p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 import { ListItem } from "./listItem";
 
 export interface IItem {
@@ -93,18 +98,18 @@ export function List(data: IListData): b.IBobrilNode {
 
 const noBullets = b.styleDef({ listStyleType: "none" });
 `}</code>
-        </pre>
-        <p>
-          <code>ListItem</code>
-          {` component reflects the `}
-          <code>done</code>
-          {` state with conditional apply of `}
-          <code>strikeOut</code>
-          {` style.`}
-        </p>
+    </pre>
+    <p>
+      <code>ListItem</code>
+      {` component reflects the `}
+      <code>done</code>
+      {` state with conditional apply of `}
+      <code>strikeOut</code>
+      {` style.`}
+    </p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 import { IItem } from "./list";
 
 export interface IItemData extends IItem {
@@ -126,11 +131,11 @@ export function ListItem(data: IItemData): b.IBobrilNode {
 
 const strikeOut = b.styleDef({ textDecoration: "line-through" });
 `}</code>
-        </pre>
-        <p>{`Form is the same as in previous example.`}</p>
+    </pre>
+    <p>{`Form is the same as in previous example.`}</p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 
 export interface IFormData {
   onSubmit(value: string): void;
@@ -169,23 +174,23 @@ export class Form extends b.Component<IFormData> {
 
 const spaceOnRight = b.styleDef({ marginRight: 5 });
 `}</code>
-        </pre>
-        <p>
-          {`Finally we come to layout component. It defines its `}
-          <code>children</code>
-          {` as object with properties of type `}
-          <code>b.IBobrilChildren</code>
-          {` for each specific part instead of one main `}
-          <code>b.IBobrilChildren</code>
-          {`. Properties are accessible in `}
-          <code>input data</code>
-          {` object in property `}
-          <code>children</code>
-          {`.`}
-        </p>
+    </pre>
+    <p>
+      {`Finally we come to layout component. It defines its `}
+      <code>children</code>
+      {` as object with properties of type `}
+      <code>b.IBobrilChildren</code>
+      {` for each specific part instead of one main `}
+      <code>b.IBobrilChildren</code>
+      {`. Properties are accessible in `}
+      <code>input data</code>
+      {` object in property `}
+      <code>children</code>
+      {`.`}
+    </p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 
 export interface ILayoutData {
   children: {
@@ -205,22 +210,22 @@ export function Layout(data: ILayoutData): b.IBobrilNode {
   );
 }
 `}</code>
-        </pre>
-        <p>
-          {`Now the layout can be used in `}
-          <em>{`index.tsx`}</em>
-          {`. This pattern for layout is called `}
-          <code>named slots projection</code>
-          {`.`}
-        </p>
-        <p>
-          {`There is also new function `}
-          <code>edit</code>
-          {` for editing the current state of Todo Item.`}
-        </p>
+    </pre>
+    <p>
+      {`Now the layout can be used in `}
+      <em>{`index.tsx`}</em>
+      {`. This pattern for layout is called `}
+      <code>named slots projection</code>
+      {`.`}
+    </p>
+    <p>
+      {`There is also new function `}
+      <code>edit</code>
+      {` for editing the current state of Todo Item.`}
+    </p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 import { Layout } from "./components/layout";
 import { List, IItem } from "./components/list";
 import { Form } from "./components/form";
@@ -258,55 +263,55 @@ class Todo extends b.Component {
 
 b.init(() => <Todo />);
 `}</code>
-        </pre>
-        <p>
-          <a href="./todo-advanced/index.html">{`Preview example`}</a>
-        </p>
-        <h2 id="maintain-the-state-with-bobx">{`Maintain the state with BobX`}</h2>
-        <p>
-          {`There is no special logic for maintaining the state in previous examples and reactions for any event is triggered manually with `}
-          <code>b.invalidate</code>
-          {`.`}
-        </p>
-        <p>
-          {`To remove those duplicate calls and make state really reactive and maintainable there exists `}
-          <code>BobX</code>
-          {` library. It uses `}
-          <code>observable</code>
-          {` pattern and works the same way as the original `}
-          <code>mobx</code>
-          {` but with few improvements.`}
-        </p>
-        <h3 id="installation">{`Installation`}</h3>
-        <p>
-          <code>BobX</code>
-          {` is standard npm package so just type in your terminal:`}
-        </p>
-        <pre>
-          <code class="language-bash">{`npm i bobx --save`}</code>
-        </pre>
-        <h3 id="bobx-store">{`BobX store`}</h3>
-        <p>{`It is a good practice too keep domain data standalone from view. Following example shows how to change previous Todo application to use bobx.`}</p>
-        <p>
-          {`Next code defines `}
-          <code>TodoStore</code>
-          {` with private list of `}
-          <code>_todos</code>
-          {`. This property is decorated with `}
-          <code>@observable</code>
-          {` decorator. Every bobril node created from component which reads `}
-          <code>_todos</code>
-          {` in its render `}
-          <em>{`(observer)`}</em>
-          {` is automatically re-rendered on any change of `}
-          <code>_todos</code>
-          {` `}
-          <em>{`(observable subject)`}</em>
-          {`.`}
-        </p>
+    </pre>
+    <p>
+      <a href="./todo-advanced/index.html">{`Preview example`}</a>
+    </p>
+    <h2 id="maintain-the-state-with-bobx">{`Maintain the state with BobX`}</h2>
+    <p>
+      {`There is no special logic for maintaining the state in previous examples and reactions for any event is triggered manually with `}
+      <code>b.invalidate</code>
+      {`.`}
+    </p>
+    <p>
+      {`To remove those duplicate calls and make state really reactive and maintainable there exists `}
+      <code>BobX</code>
+      {` library. It uses `}
+      <code>observable</code>
+      {` pattern and works the same way as the original `}
+      <code>mobx</code>
+      {` but with few improvements.`}
+    </p>
+    <h3 id="installation">{`Installation`}</h3>
+    <p>
+      <code>BobX</code>
+      {` is standard npm package so just type in your terminal:`}
+    </p>
+    <pre>
+      <code class="language-bash">{`npm i bobx --save`}</code>
+    </pre>
+    {b.anchor(<h3 id="bobx-store">{`BobX store`}</h3>, "bobx-store")}
+    <p>{`It is a good practice too keep domain data standalone from view. Following example shows how to change previous Todo application to use bobx.`}</p>
+    <p>
+      {`Next code defines `}
+      <code>TodoStore</code>
+      {` with private list of `}
+      <code>_todos</code>
+      {`. This property is decorated with `}
+      <code>@observable</code>
+      {` decorator. Every bobril node created from component which reads `}
+      <code>_todos</code>
+      {` in its render `}
+      <em>{`(observer)`}</em>
+      {` is automatically re-rendered on any change of `}
+      <code>_todos</code>
+      {` `}
+      <em>{`(observable subject)`}</em>
+      {`.`}
+    </p>
 
-        <pre>
-          <code class="language-tsx">{`import { observable } from "bobx";
+    <pre>
+      <code class="language-tsx">{`import { observable } from "bobx";
 import { IItem } from "./components/list";
 
 export class TodoStore {
@@ -326,11 +331,11 @@ export class TodoStore {
   }
 }
 `}</code>
-        </pre>
-        <p>{`Such store is ready to be used in main component of Todo application.`}</p>
+    </pre>
+    <p>{`Such store is ready to be used in main component of Todo application.`}</p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+    <pre>
+      <code class="language-tsx">{`import * as b from "bobril";
 import { Layout } from "./components/layout";
 import { List } from "./components/list";
 import { Form } from "./components/form";
@@ -359,50 +364,50 @@ class Todo extends b.Component {
 
 b.init(() => <Todo />);
 `}</code>
-        </pre>
-        <p>
-          <a href="./todo-advanced-bobx/index.html">{`Preview example`}</a>
-        </p>
-        <h3 id="basic-optimizations">{`Basic optimizations`}</h3>
-        <p>
-          <code>BobX</code>
-          {` provides several strategies to optimize watching of observable subjects to watch only what is really needed. Those are basic tools:`}
-        </p>
-        <p>
-          <code>@observable</code>
-          {` - watches objects recursively - it stops recursion only on property with prototype (class objects)`}
-        </p>
-        <p>
-          <code>@observable.shallow</code>
-          {` - watches objects reference and only first level of properties`}
-        </p>
-        <p>
-          <code>@observable.ref</code>
-          {` - watches objects only reference level`}
-        </p>
-        <p>
-          <code>@computed</code>
-          {` - special decorator creating memoization on getter using just `}
-          <code>observable</code>
-          {` values for its computation`}
-        </p>
-        <h2 id="testing">{`Testing`}</h2>
-        <p>
-          <code>Bobril-build</code>
-          {` provides automatic run of tests out-of-the box.`}
-        </p>
-        <p>
-          {`The only condition is to have test files named with postfix `}
-          <em>*{`spec.ts`}</em>
-        </p>
-        <p>
-          {`It has automatically referenced type definitions for `}
-          <code>jasmine</code>
-          {` framework and run all tests on every rebuild. Results can be found in terminal.`}
-        </p>
+    </pre>
+    <p>
+      <a href="./todo-advanced-bobx/index.html">{`Preview example`}</a>
+    </p>
+    <h3 id="basic-optimizations">{`Basic optimizations`}</h3>
+    <p>
+      <code>BobX</code>
+      {` provides several strategies to optimize watching of observable subjects to watch only what is really needed. Those are basic tools:`}
+    </p>
+    <p>
+      <code>@observable</code>
+      {` - watches objects recursively - it stops recursion only on property with prototype (class objects)`}
+    </p>
+    <p>
+      <code>@observable.shallow</code>
+      {` - watches objects reference and only first level of properties`}
+    </p>
+    <p>
+      <code>@observable.ref</code>
+      {` - watches objects only reference level`}
+    </p>
+    <p>
+      <code>@computed</code>
+      {` - special decorator creating memoization on getter using just `}
+      <code>observable</code>
+      {` values for its computation`}
+    </p>
+    <h2 id="testing">{`Testing`}</h2>
+    <p>
+      <code>Bobril-build</code>
+      {` provides automatic run of tests out-of-the box.`}
+    </p>
+    <p>
+      {`The only condition is to have test files named with postfix `}
+      <em>*{`spec.ts`}</em>
+    </p>
+    <p>
+      {`It has automatically referenced type definitions for `}
+      <code>jasmine</code>
+      {` framework and run all tests on every rebuild. Results can be found in terminal.`}
+    </p>
 
-        <pre>
-          <code class="language-tsx">{`import { TodoStore } from "./store";
+    <pre>
+      <code class="language-tsx">{`import { TodoStore } from "./store";
 
 describe("Todo store", () => {
   let store: TodoStore;
@@ -422,15 +427,109 @@ describe("Todo store", () => {
   });
 });
 `}</code>
-        </pre>
-      </>
-    );
-  }
+    </pre>
+  </>
+);
 
-  // postRenderDom(): void {
-  //   const elem = b.getDomNode(this.me) as HTMLDivElement;
-  //   elem.innerHTML = content;
-  // }
+interface IRouteWithLevel {
+  route: b.IRoute;
+  level: number;
+  parent?: IRouteWithLevel;
+  item: IItemData;
 }
 
-// const content = [--CONTENT--];
+export function buildSubRoutes(
+  node: b.IBobrilNode,
+  lastRoute: IRouteWithLevel
+): IRouteWithLevel {
+  childrenAsArray(
+    node.children || (node.data ? node.data.children : undefined)
+  ).forEach(child => {
+    let foundLevel = 0;
+    const id = getId(child);
+    if (child.tag && id) {
+      const result = /(h)([1-6]){1}/.exec(child.tag);
+      if (result && result.length > 2) {
+        foundLevel = parseInt(result[2], 10);
+      }
+    }
+
+    if (foundLevel <= 1) {
+      lastRoute = buildSubRoutes(child, lastRoute);
+    } else {
+      const newRoute = b.route({ name: id, url: id }, []);
+
+      const childWithAnchor = b.anchor(child, id);
+      child.component = childWithAnchor.component;
+
+      if (foundLevel <= lastRoute.level) {
+        do {
+          lastRoute = lastRoute.parent!;
+        } while (lastRoute.level >= foundLevel);
+      }
+
+      lastRoute.route.children
+        ? lastRoute.route.children.push(newRoute)
+        : (lastRoute.route.children = [newRoute]);
+
+      const item: IItemData = {
+        subs: [],
+        title: child.children as string,
+        targetId: id!
+      };
+      lastRoute.item.subs!.push(item);
+      lastRoute = {
+        route: newRoute,
+        level: foundLevel,
+        parent: lastRoute,
+        item
+      };
+    }
+  });
+
+  return lastRoute;
+}
+
+function childrenAsArray(
+  children: b.IBobrilChildren | undefined
+): b.IBobrilNode[] {
+  let result: b.IBobrilNode[] = [];
+  if (children !== undefined) {
+    if (b.isArray(children)) {
+      (children as b.IBobrilChildren[]).forEach(
+        child => (result = [...result, ...childrenAsArray(child)])
+      );
+    } else {
+      result.push(children as b.IBobrilNode);
+    }
+  }
+  return result;
+}
+
+function getId(node: b.IBobrilNode): string | undefined {
+  return node.attrs ? node.attrs.id : undefined;
+}
+
+export interface IRouteWithItems {
+  route: b.IRoute;
+  item: IItemData;
+}
+
+export function buildPageRoute(
+  routeDef: b.IRoute,
+  routeContent: b.IBobrilNode
+): IRouteWithItems {
+  const route = b.route(routeDef, [
+    b.route({ url: routeDef.url + "-top", name: routeDef.name + "-top" })
+  ]);
+  const item: IItemData = { subs: [], targetId: "", title: "" };
+
+  buildSubRoutes(routeContent, {
+    route,
+    level: 0,
+    item
+  });
+
+  console.log(route);
+  return { route, item: item };
+}

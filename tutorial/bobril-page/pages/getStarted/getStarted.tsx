@@ -2,7 +2,17 @@ import * as b from "bobril";
 import { Container, Jumbotron, Size, Col } from "bobrilstrap";
 import { Header } from "./header";
 import { ShortInfo } from "./shortInfo";
-import { Content } from "./content";
+import { Content, buildPageRoute, content } from "./content";
+import { SideBar } from "../sidebar/sidebar";
+
+export const pageInfo = buildPageRoute(
+  {
+    name: "getting-started",
+    url: "getting-started",
+    handler: () => <GettingStarted />
+  },
+  content
+);
 
 export class GettingStarted extends b.Component<{}> {
   render(): b.IBobrilChildren {
@@ -15,16 +25,18 @@ export class GettingStarted extends b.Component<{}> {
             <ShortInfo />
           </Container>
         </Jumbotron>
+
         <Container>
-          <Col size={Size.Sm} span={12}>
+          <Col size={Size.Sm} span={9}>
             <Content />
           </Col>
-          {/* <Col size={Size.Sm} span={9}>
+          <Col size={Size.Sm} span={3}>
             <SideBar
-              items={[{ targetId: "test", title: "Test" }]}
-              topTargetId="test"
+              items={pageInfo.item.subs!}
+              topTargetId={pageInfo.route.name + "-top"}
+              main
             />
-          </Col> */}
+          </Col>
         </Container>
       </>
     );

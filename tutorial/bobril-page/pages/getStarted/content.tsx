@@ -1,69 +1,30 @@
 import * as b from "bobril";
+import { IItemData } from "../sidebar/sidebarItem";
 
 export class Content extends b.Component {
   static id: string = "get-started";
   render(): b.IBobrilChildren {
-    return (
-      <>
-        <h1 id="get-started">{`Get started`}</h1>
-        <p>{`Go through this short tutorial and learn how easy you can create your own production-ready application.`}</p>
-        <h2 id="setup-build-environment">{`Setup build environment`}</h2>
-        <p>
-          {`Bobril is distributed with its own build system based on `}
-          <code>NodeJS</code>
-          {` and `}
-          <code>.NET Core</code>
-          {` providing all necessary tasks like compilation, minification, translations, sprites, styles etc. You can install it globally by `}
-          <code>npm</code>
-          {`.`}
-        </p>
-        <pre>
-          <code class="language-bash">{`npm i bobril-build -g`}</code>
-        </pre>
-        <h2 id="prepare-application-package">{`Prepare application package`}</h2>
-        <p>
-          {`You can initialize your application as an usual `}
-          <code>npm</code>
-          {` package by following.`}
-        </p>
-        <pre>
-          <code class="language-bash">{`npm init
-npm i bobril --save`}</code>
-        </pre>
-        <h2 id="first-simple-component---hello">{`First Simple Component - Hello`}</h2>
-        <p>
-          {`Bobril component can be written as a `}
-          <code>class</code>
-          {` extending base `}
-          <code>Component</code>
-          {` class. The base class can have generic parameter to define its `}
-          <code>data</code>
-          {`. This data works as an input from the outside usage.`}
-        </p>
-        <p>
-          {`Content of component is defined by return value of `}
-          <code>render()</code>
-          {` method. The XML-like syntax for return value is called TSX and it creates an object of type `}
-          <code>IBobrilChildren</code>
-          {` (`}
-          <code>bobril</code>
-          {` nodes). TSX is optional and you can use standard TypeScript syntax for creating `}
-          <code>bobril</code>
-          {` nodes as objects.`}
-        </p>
-        <p>
-          {`Input data are accessible by `}
-          <code>this.data</code>
-          {`.`}
-        </p>
-        <p>
-          {`The last line initialize the `}
-          <code>bobril</code>
-          {` application with its entry node.`}
-        </p>
+    return content;
+  }
+}
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+export const content: b.IBobrilNode = <><h1 id="get-started">{`Get started`}</h1>
+<p>{`Go through this short tutorial and learn how easy you can create your own production-ready application.`}</p>
+<h2 id="setup-build-environment">{`Setup build environment`}</h2>
+<p>{`Bobril is distributed with its own build system based on `}<code>NodeJS</code>{` and `}<code>.NET Core</code>{` providing all necessary tasks like compilation, minification, translations, sprites, styles etc. You can install it globally by `}<code>npm</code>{`.`}</p>
+<pre><code class="language-bash">{`npm i bobril-build -g`}</code></pre>
+<h2 id="prepare-application-package">{`Prepare application package`}</h2>
+<p>{`You can initialize your application as an usual `}<code>npm</code>{` package by following.`}</p>
+<pre><code class="language-bash">{`npm init
+npm i bobril --save`}</code></pre>
+<h2 id="first-simple-component---hello">{`First Simple Component - Hello`}</h2>
+<p>{`Bobril component can be written as a `}<code>class</code>{` extending base `}<code>Component</code>{` class. The base class can have generic parameter to define its `}<code>data</code>{`. This data works as an input from the outside usage.`}</p>
+<p>{`Content of component is defined by return value of `}<code>render()</code>{` method. The XML-like syntax for return value is called TSX and it creates an object of type `}<code>IBobrilChildren</code>{` (`}<code>bobril</code>{` nodes). TSX is optional and you can use standard TypeScript syntax for creating `}<code>bobril</code>{` nodes as objects.`}</p>
+<p>{`Input data are accessible by `}<code>this.data</code>{`.`}</p>
+<p>{`The last line initialize the `}<code>bobril</code>{` application with its entry node.`}</p>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
 
 interface IHelloData {
   name: string;
@@ -83,56 +44,21 @@ class Hello extends b.Component<IHelloData> {
 }
 
 b.init(() => <Hello name="Developer" />);
-`}</code>
-        </pre>
-        <p>
-          <a href="./hello/index.html">{`Preview example`}</a>
-        </p>
-        <p>
-          {`Now just start `}
-          <code>bobril-build</code>
-          {` and let it watch your code for changes.`}
-        </p>
-        <pre>
-          <code class="language-bash">{`bb`}</code>
-        </pre>
-        <p>
-          {`To Preview you application visit `}
-          <a href="http://localhost:8080">http://localhost:8080</a>
-          {` .`}
-        </p>
-        <h2 id="bring-it-to-life-with-stateful-component">{`Bring it to life with Stateful Component`}</h2>
-        <p>
-          {`Component can work beside input data also with its internal state. This state is accessible by `}
-          <code>this</code>
-          {` keyword. To re-invoke render after change of some part of internal state the `}
-          <code>b.invalidate(this)</code>
-          {` function has to be called.`}
-        </p>
-        <p>{`This example also contains usage of another life-cycle methods:`}</p>
-        <p>
-          <code>init</code>
-          {` - called when bobril node is added to Virtual DOM for the first time`}
-        </p>
-        <p>
-          <code>destroy</code>
-          {` - called before bobril node is removed from Virtual DOM`}
-        </p>
-        <p>{`Timer component use them for setup and clear the interval.`}</p>
-        <p>
-          {`The `}
-          <code>&lt;button&gt;</code>
-          {` html element is used to reset the timer. Reset is implemented as a `}
-          <code>callback</code>
-          {` (event delegation) for handling normalized `}
-          <code>onChange</code>
-          {` event of the element. This normalized event handlers are automatically accessible on html elements or their handling can be written as a public life-cycle method of `}
-          <code>Component</code>
-          {` class delegated up as a callback in input data.`}
-        </p>
+`}</code></pre>
+<p><a href="./hello/index.html">{`Preview example`}</a></p>
+<p>{`Now just start `}<code>bobril-build</code>{` and let it watch your code for changes.`}</p>
+<pre><code class="language-bash">{`bb`}</code></pre>
+<p>{`To Preview you application visit `}<a href="http://localhost:8080">http://localhost:8080</a>{` .`}</p>
+<h2 id="bring-it-to-life-with-stateful-component">{`Bring it to life with Stateful Component`}</h2>
+<p>{`Component can work beside input data also with its internal state. This state is accessible by `}<code>this</code>{` keyword. To re-invoke render after change of some part of internal state the `}<code>b.invalidate(this)</code>{` function has to be called.`}</p>
+<p>{`This example also contains usage of another life-cycle methods:`}</p>
+<p><code>init</code>{` - called when bobril node is added to Virtual DOM for the first time`}</p>
+<p><code>destroy</code>{` - called before bobril node is removed from Virtual DOM`}</p>
+<p>{`Timer component use them for setup and clear the interval.`}</p>
+<p>{`The `}<code>&lt;button&gt;</code>{` html element is used to reset the timer. Reset is implemented as a `}<code>callback</code>{` (event delegation) for handling normalized `}<code>onChange</code>{` event of the element. This normalized event handlers are automatically accessible on html elements or their handling can be written as a public life-cycle method of `}<code>Component</code>{` class delegated up as a callback in input data.`}</p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
 
 class Timer extends b.Component {
   private _time: number = 0;
@@ -167,33 +93,14 @@ class Timer extends b.Component {
   }
 }
 
-b.init(() => <Timer />);`}</code>
-        </pre>
-        <p>
-          <a href="./timer/index.html">{`Preview example`}</a>
-        </p>
-        <h2 id="todo-application">{`Todo Application`}</h2>
-        <p>
-          {`Combination of several `}
-          <code>components</code>
-          {` with input `}
-          <code>data</code>
-          {`, `}
-          <code>event delegation</code>
-          {` and `}
-          <code>internal state</code>
-          {` allows to create full Todo application.`}
-        </p>
-        <p>
-          {`Following component displays list of items given from its parent. It uses `}
-          <code>key</code>
-          {` attribute with unique id of item to assure clear identification of `}
-          <code>&lt;li&gt;</code>
-          {` bobril node . Otherwise it could cause mismatch of internat states.`}
-        </p>
+b.init(() => <Timer />);`}</code></pre>
+<p><a href="./timer/index.html">{`Preview example`}</a></p>
+<h2 id="todo-application">{`Todo Application`}</h2>
+<p>{`Combination of several `}<code>components</code>{` with input `}<code>data</code>{`, `}<code>event delegation</code>{` and `}<code>internal state</code>{` allows to create full Todo application.`}</p>
+<p>{`Following component displays list of items given from its parent. It uses `}<code>key</code>{` attribute with unique id of item to assure clear identification of `}<code>&lt;li&gt;</code>{` bobril node . Otherwise it could cause mismatch of internat states.`}</p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
 
 export interface IItem {
   id: number;
@@ -217,18 +124,11 @@ export function List(data: IListData): b.IBobrilNode {
 function ListItem(data: IItem): b.IBobrilNode {
   return <li key={data.id}>{data.text}</li>;
 }
-`}</code>
-        </pre>
-        <p>
-          {`Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses `}
-          <code>virtual CSS</code>
-          {` created by `}
-          <code>b.styleDef</code>
-          {` definition to setup margin between elements.`}
-        </p>
+`}</code></pre>
+<p>{`Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses `}<code>virtual CSS</code>{` created by `}<code>b.styleDef</code>{` definition to setup margin between elements.`}</p>
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
 
 export interface IFormData {
   onSubmit(value: string): void;
@@ -266,12 +166,11 @@ export class Form extends b.Component<IFormData> {
 }
 
 const spaceOnRight = b.styleDef({ marginRight: 5 });
-`}</code>
-        </pre>
-        <p>{`Finally the main component maintains list of items and composes the tree of final application.`}</p>
+`}</code></pre>
+<p>{`Finally the main component maintains list of items and composes the tree of final application.`}</p>
+ 
 
-        <pre>
-          <code class="language-tsx">{`import * as b from "bobril";
+<pre><code class="language-tsx">{`import * as b from "bobril";
 import { List, IItem } from "./components/list";
 import { Form } from "./components/form";
 
@@ -295,19 +194,109 @@ class Todo extends b.Component {
 }
 
 b.init(() => <Todo />);
-`}</code>
-        </pre>
-        <p>
-          <a href="./todo/index.html">{`Preview example`}</a>
-        </p>
-      </>
-    );
-  }
+`}</code></pre>
+<p><a href="./todo/index.html">{`Preview example`}</a></p>
+</>;
 
-  // postRenderDom(): void {
-  //   const elem = b.getDomNode(this.me) as HTMLDivElement;
-  //   elem.innerHTML = content;
-  // }
+interface IRouteWithLevel {
+  route: b.IRoute;
+  level: number;
+  parent?: IRouteWithLevel;
+  item: IItemData;
 }
 
-// const content = [--CONTENT--];
+export function buildSubRoutes(
+  node: b.IBobrilNode,
+  lastRoute: IRouteWithLevel
+): IRouteWithLevel {
+  childrenAsArray(
+    node.children || (node.data ? node.data.children : undefined)
+  ).forEach(child => {
+    let foundLevel = 0;
+    const id = getId(child);
+    if (child.tag && id) {
+      const result = /(h)([1-6]){1}/.exec(child.tag);
+      if (result && result.length > 2) {
+        foundLevel = parseInt(result[2], 10);
+      }
+    }
+
+    if (foundLevel <= 1) {
+      lastRoute = buildSubRoutes(child, lastRoute);
+    } else {
+      const newRoute = b.route({ name: id, url: id }, []);
+
+      const childWithAnchor = b.anchor(child, id);
+      child.component = childWithAnchor.component;
+
+      if (foundLevel <= lastRoute.level) {
+        do {
+          lastRoute = lastRoute.parent!;
+        } while (lastRoute.level >= foundLevel);
+      }
+
+      lastRoute.route.children
+        ? lastRoute.route.children.push(newRoute)
+        : (lastRoute.route.children = [newRoute]);
+
+      const item: IItemData = {
+        subs: [],
+        title: child.children as string,
+        targetId: id!
+      };
+      lastRoute.item.subs!.push(item);
+      lastRoute = {
+        route: newRoute,
+        level: foundLevel,
+        parent: lastRoute,
+        item
+      };
+    }
+  });
+
+  return lastRoute;
+}
+
+function childrenAsArray(
+  children: b.IBobrilChildren | undefined
+): b.IBobrilNode[] {
+  let result: b.IBobrilNode[] = [];
+  if (children !== undefined) {
+    if (b.isArray(children)) {
+      (children as b.IBobrilChildren[]).forEach(
+        child => (result = [...result, ...childrenAsArray(child)])
+      );
+    } else {
+      result.push(children as b.IBobrilNode);
+    }
+  }
+  return result;
+}
+
+function getId(node: b.IBobrilNode): string | undefined {
+  return node.attrs ? node.attrs.id : undefined;
+}
+
+export interface IRouteWithItems {
+  route: b.IRoute;
+  item: IItemData;
+}
+
+export function buildPageRoute(
+  routeDef: b.IRoute,
+  routeContent: b.IBobrilNode
+): IRouteWithItems {
+  const route = b.route(routeDef, [
+    b.route({ url: routeDef.url + "-top", name: routeDef.name + "-top" })
+  ]);
+  const item: IItemData = { subs: [], targetId: "", title: "" };
+
+  buildSubRoutes(routeContent, {
+    route,
+    level: 0,
+    item
+  });
+
+  console.log(route.children);
+  return { route, item: item };
+}
