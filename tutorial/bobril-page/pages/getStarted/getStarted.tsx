@@ -2,8 +2,9 @@ import * as b from "bobril";
 import { Container, Jumbotron, Size, Col } from "bobrilstrap";
 import { Header } from "./header";
 import { ShortInfo } from "./shortInfo";
-import { Content, buildPageRoute, content } from "./content";
+import { Content, content } from "./content";
 import { SideBar } from "../sidebar/sidebar";
+import { buildPageRoute } from "../generateUtils/routebuilder";
 
 export const pageInfo = buildPageRoute(
   {

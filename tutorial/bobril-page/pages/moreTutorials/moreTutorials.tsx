@@ -1,7 +1,8 @@
 import * as b from "bobril";
 import { Container, Col, Size } from "bobrilstrap";
-import { Content, buildPageRoute, content } from "./content";
+import { Content, content } from "./content";
 import { SideBar } from "../sidebar/sidebar";
+import { buildPageRoute } from "../generateUtils/routebuilder";
 
 export const pageInfo = buildPageRoute(
   {
