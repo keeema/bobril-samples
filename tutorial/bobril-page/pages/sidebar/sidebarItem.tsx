@@ -34,6 +34,7 @@ export class SideBarItem extends b.Component<IItemData> {
                 window.scrollTo(0, 0);
                 return true;
               }
+              b.ignoreShouldChange();
               return false;
             }}
           >

@@ -13,7 +13,8 @@ import {
   NavbarCollapse,
   NavbarNav,
   NavbarNavItem,
-  Target
+  Target,
+  NavbarStatic
 } from "bobrilstrap";
 import { observable } from "bobx";
 
@@ -22,7 +23,7 @@ export class Navigation extends b.Component<{}> {
 
   render(): b.IBobrilChildren {
     return (
-      <Navbar>
+      <Navbar header static={NavbarStatic.Top}>
         <Container fluid>
           <NavbarHeader>
             <NavbarBrand>
