@@ -205,7 +205,7 @@ class Todo extends b.Component {
 b.init(() => <Todo />);
 `}</code></pre>
 <p><a href="./todo-advanced/index.html">{`Preview example`}</a></p>
-<h2 id="maintain-the-state-with-bobx">{`Maintain the state with BobX`}</h2>
+<h2 id="maintain-state-with-bobx">{`Maintain state with BobX`}</h2>
 <p>{`There is no special logic for maintaining the state in previous examples and reactions for any event is triggered manually with `}<code>b.invalidate</code>{`.`}</p>
 <p>{`To remove those duplicate calls and make state really reactive and maintainable there exists `}<code>BobX</code>{` library. It uses `}<code>observable</code>{` pattern and works the same way as the original `}<code>mobx</code>{` but with few improvements.`}</p>
 <h3 id="installation">{`Installation`}</h3>

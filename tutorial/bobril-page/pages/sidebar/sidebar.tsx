@@ -23,8 +23,8 @@ export class SideBar extends b.Component<IDocsSidebarData> {
   }
   render(): b.IBobrilChildren {
     return (
-      <Affix top={this.data.main ? 0 : 0}>
-        <nav>
+      <Affix top={this.data.main ? 457 : 62}>
+        <nav style={docsSideBar}>
           <SideBarItems
             items={this.data.items}
             topTargetId={this.data.topTargetId}
@@ -45,3 +45,6 @@ export class SideBar extends b.Component<IDocsSidebarData> {
     };
   }
 }
+
+b.asset("./sidebar.css");
+const docsSideBar = b.styleDef("bs-docs-sidebar");

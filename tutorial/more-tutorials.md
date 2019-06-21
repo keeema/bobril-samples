@@ -229,7 +229,7 @@ b.init(() => <Todo />);
 
 [Preview example](./todo-advanced/index.html)
 
-## Maintain the state with BobX
+## Maintain state with BobX
 
 There is no special logic for maintaining the state in previous examples and reactions for any event is triggered manually with `b.invalidate`.
 
