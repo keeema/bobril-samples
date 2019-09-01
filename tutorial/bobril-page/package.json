@@ -4,8 +4,8 @@
   "description": "",
   "dependencies": {
     "@types/prismjs": "^1.16.0",
-    "bobril": "^11.4.0",
-    "bobrilstrap": "^3.0.11",
+    "bobril": "^12.0.0",
+    "bobrilstrap": "^3.2.1",
     "bobx": "^0.27.1",
     "bootswatch": "^3.4.1",
     "prismjs": "^1.16.0"

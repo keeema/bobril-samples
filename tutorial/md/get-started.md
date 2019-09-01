@@ -29,7 +29,7 @@ Input data are accessible by `this.data`.
 
 The last line initialize the `bobril` application with its entry node.
 
-<!-- # from-file: ./examples/hello/index.tsx -->
+<!-- # from-file: ../examples/hello/index.tsx -->
 
 ```tsx
 import * as b from "bobril";
@@ -55,7 +55,7 @@ b.init(() => <Hello name="Developer" />);
 
 ```
 
-[Preview example](./hello/index.html)
+[Preview example](../examples/hello/dist/index.html)
 
 Now just start `bobril-build` and let it watch your code for changes.
 
@@ -79,7 +79,7 @@ Timer component use them for setup and clear the interval.
 
 The `<button>` html element is used to reset the timer. Reset is implemented as a `callback` (event delegation) for handling normalized `onChange` event of the element. This normalized event handlers are automatically accessible on html elements or their handling can be written as a public life-cycle method of `Component` class delegated up as a callback in input data.
 
-<!-- # from-file: ./examples/timer/index.tsx -->
+<!-- # from-file: ../examples/timer/index.tsx -->
 
 ```tsx
 import * as b from "bobril";
@@ -120,7 +120,7 @@ class Timer extends b.Component {
 b.init(() => <Timer />);
 ```
 
-[Preview example](./timer/index.html)
+[Preview example](../examples/timer/dist/index.html)
 
 ## Todo Application
 
@@ -128,7 +128,7 @@ Combination of several `components` with input `data`, `event delegation` and `i
 
 Following component displays list of items given from its parent. It uses `key` attribute with unique id of item to assure clear identification of `<li>` bobril node . Otherwise it could cause mismatch of internat states.
 
-<!-- # from-file: ./examples/todo/components/list.tsx -->
+<!-- # from-file: ../examples/todo/components/list.tsx -->
 
 ```tsx
 import * as b from "bobril";
@@ -160,7 +160,7 @@ function ListItem(data: IItem): b.IBobrilNode {
 
 Next component consists of input elements to get data from user. The result is delegated up with event callback. It also uses `virtual CSS` created by `b.styleDef` definition to setup margin between elements.
 
-<!-- # from-file: ./examples/todo/components/form.tsx -->
+<!-- # from-file: ../examples/todo/components/form.tsx -->
 
 ```tsx
 import * as b from "bobril";
@@ -206,7 +206,7 @@ const spaceOnRight = b.styleDef({ marginRight: 5 });
 
 Finally the main component maintains list of items and composes the tree of final application.
 
- <!-- # from-file: ./examples/todo/index.tsx -->
+ <!-- # from-file: ../examples/todo/index.tsx -->
 
 ```tsx
 import * as b from "bobril";
@@ -236,4 +236,4 @@ b.init(() => <Todo />);
 
 ```
 
-[Preview example](./todo/index.html)
+[Preview example](../examples/todo/dist/index.html)

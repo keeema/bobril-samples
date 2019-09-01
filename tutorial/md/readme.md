@@ -12,6 +12,6 @@
 
 > Using Virtual DOM to ensure maximum effectiveness
 
-[Get Started](./bobril-page/resources/get-started.md)
+[Get Started](./get-started.md)
 
-[Eco-system](./bobril-page/resources/eco-system.md)
+[Eco-system](./eco-system.md)

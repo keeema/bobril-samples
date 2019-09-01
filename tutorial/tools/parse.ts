@@ -1,5 +1,13 @@
 import * as marked from "marked";
-import { readFile, save } from "./common";
+import {
+  readFile,
+  save,
+  isDirectory,
+  readFilesFromDirectory,
+  newLineRegex
+} from "./common";
+import * as fs from "fs-extra";
+const exampleFileRegex = /^(\[Preview example\]\()([\/\w\-. ]+)(\))/gm;
 
 interface IParseDef {
   id: string;
@@ -10,17 +18,17 @@ interface IParseDef {
 const parseDefs: IParseDef[] = [
   {
     id: "get-started",
-    source: "../../get-started.md",
+    source: "../../md/get-started.md",
     destination: "../../bobril-page/pages/getStarted/content.tsx"
   },
   {
     id: "more-tutorials",
-    source: "../../more-tutorials.md",
+    source: "../../md/more-tutorials",
     destination: "../../bobril-page/pages/moreTutorials/content.tsx"
   },
   {
     id: "eco-system",
-    source: "../../eco-system.md",
+    source: "../../md/eco-system.md",
     destination: "../../bobril-page/pages/ecoSystem/content.tsx"
   }
 ];
@@ -28,8 +36,13 @@ const parseDefs: IParseDef[] = [
 const template = readFile("../contentTemplate.tsx");
 
 function processFile(definition: IParseDef) {
-  const mdContent = readFile(definition.source);
-  const htmlContent = marked(mdContent, {
+  const mdContent = isDirectory(definition.source)
+    ? readFilesFromDirectory(definition.source)
+    : readFile(definition.source);
+
+  const updatedMdContent = updateExamples(mdContent, definition.source);
+
+  const htmlContent = marked(updatedMdContent, {
     renderer: getRenderer(),
     xhtml: true
   }).replace(/(<!--)(.*)(-->)/g, "");
@@ -41,6 +54,49 @@ function processFile(definition: IParseDef) {
 }
 
 parseDefs.forEach(processFile);
+
+export function updateExamples(tutorialContent: string, tutorialPath: string) {
+  const links: string[][] = [];
+  const lines = tutorialContent.split(newLineRegex);
+  for (let i = lines.length - 1; i >= 0; i--) {
+    const link = getExampleLink(lines[i]);
+    if (link) {
+      console.log("Processing link: " + link);
+      let resourceProjectName = link.substr(0, link.lastIndexOf("/dist"));
+      resourceProjectName = resourceProjectName.substr(
+        resourceProjectName.lastIndexOf("/") + 1
+      );
+      const resourceProjectPath =
+        "../../bobril-page/resources/dists/" + resourceProjectName;
+      const linkFileName = link.substr(link.lastIndexOf("/") + 1);
+      const fullExampleProjectPath =
+        (isDirectory(tutorialPath)
+          ? tutorialPath + "/"
+          : tutorialPath.substring(0, tutorialPath.lastIndexOf("/") + 1)) +
+        link.substring(0, link.lastIndexOf("/"));
+      console.log("Deleting example from bobril-page: " + resourceProjectPath);
+      fs.removeSync(resourceProjectPath);
+      console.log(
+        "Copying from " + fullExampleProjectPath + " to " + resourceProjectPath
+      );
+      fs.copySync(fullExampleProjectPath, resourceProjectPath);
+      links.push([link, `./${resourceProjectName}/${linkFileName}`]);
+    }
+  }
+
+  for (let i = 0; i < links.length; i++) {
+    tutorialContent = tutorialContent.replace(links[i][0], links[i][1]);
+    console.log("Link " + links[i][0] + " updated to: " + links[i][1]);
+  }
+
+  return tutorialContent;
+}
+
+function getExampleLink(line: string): string {
+  if (line === undefined) return "";
+  var match = new RegExp(exampleFileRegex).exec(line.trim());
+  return match !== null && match.length >= 3 ? match[2].trim() : "";
+}
 
 function getRenderer(): marked.Renderer {
   const renderer = new marked.Renderer();

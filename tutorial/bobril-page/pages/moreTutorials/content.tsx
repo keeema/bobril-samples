@@ -214,7 +214,7 @@ b.init(() => <Todo />);
 <h3 id="bobx-store">{`BobX store`}</h3>
 <p>{`It is a good practice too keep domain data standalone from view. Following example shows how to change previous Todo application to use bobx.`}</p>
 <p>{`Next code defines `}<code>TodoStore</code>{` with private list of `}<code>_todos</code>{`. This property is decorated with `}<code>@observable</code>{` decorator. Every bobril node created from component which reads `}<code>_todos</code>{` in its render `}<em>{`(observer)`}</em>{` is automatically re-rendered on any change of `}<code>_todos</code>{` `}<em>{`(observable subject)`}</em>{`.`}</p>
- 
+
 
 <pre><code class="language-tsx">{`import { observable } from "bobx";
 import { IItem } from "./components/list";
