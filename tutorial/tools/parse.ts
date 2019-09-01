@@ -55,7 +55,7 @@ function processFile(definition: IParseDef) {
 
 parseDefs.forEach(processFile);
 
-export function updateExamples(tutorialContent: string, tutorialPath: string) {
+function updateExamples(tutorialContent: string, tutorialPath: string) {
   const links: string[][] = [];
   const lines = tutorialContent.split(newLineRegex);
   for (let i = lines.length - 1; i >= 0; i--) {

@@ -8,8 +8,8 @@ import { buildPageRoute } from "../generateUtils/routebuilder";
 
 export const pageInfo = buildPageRoute(
   {
-    name: "getting-started",
-    url: "getting-started",
+    name: "get-started",
+    url: "get-started",
     handler: () => <GettingStarted />
   },
   content

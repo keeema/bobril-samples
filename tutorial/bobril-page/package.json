@@ -8,7 +8,7 @@
     "bobrilstrap": "^3.2.1",
     "bobx": "^0.27.1",
     "bootswatch": "^3.4.1",
-    "prismjs": "^1.16.0"
+    "prismjs": "1.16.0"
   },
   "devDependencies": {
     "bb-tslint-plugin": "^1.2.2"

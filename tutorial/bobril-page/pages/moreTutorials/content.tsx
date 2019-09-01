@@ -8,7 +8,7 @@ export class Content extends b.Component {
 }
 
 export const content: b.IBobrilNode = <><h1 id="more-tutorials">{`More tutorials`}</h1>
-<p>{`If you have finished `}<a href="./get-started.md">{`Get Started`}</a>{` section then you can continue with exploring more possibilities offered by bobril.`}</p>
+<p>{`Explore more possibilities offered by bobril and its additional packages.`}</p>
 <h2 id="nesting-components">{`Nesting Components`}</h2>
 <h3 id="simple-nesting">{`Simple nesting`}</h3>
 <p>{`Some components are created just because to wrap some other components (to add styling, additional functionality etc.). To deal with nesting in components tree there is a special `}<code>input data</code>{` property `}<code>children</code>{`. It can be defined manually as in example or inherited from interface `}<code>b.IDataWithChildren</code>{`.`}</p>
