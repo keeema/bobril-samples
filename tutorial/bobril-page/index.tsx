@@ -7,7 +7,8 @@ import "./node_modules/prismjs/components/prism-bash";
 import "./node_modules/prismjs/components/prism-jsx";
 import "./node_modules/prismjs/components/prism-tsx";
 import "./node_modules/prismjs/themes/prism.css";
-b.asset("node_modules/bootswatch/cerulean/bootstrap.min.css");
+// import "./resources/prism-themes/prism-vs.css";
+b.asset("node_modules/bootswatch/cosmo/bootstrap.min.css");
 
 b.routes(
   b.route(routes.main, [
