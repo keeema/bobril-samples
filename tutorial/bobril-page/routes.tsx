@@ -15,3 +15,5 @@ export const ecoSystem: b.IRoute = {
   url: "eco-system",
   handler: () => <EcoSystem />
 };
+
+export const defaultRoute = gettingStarted;

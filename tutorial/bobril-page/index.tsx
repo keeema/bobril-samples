@@ -6,8 +6,8 @@ import "./node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard
 import "./node_modules/prismjs/components/prism-bash";
 import "./node_modules/prismjs/components/prism-jsx";
 import "./node_modules/prismjs/components/prism-tsx";
-import "./node_modules/prismjs/themes/prism.css";
-// import "./resources/prism-themes/prism-vs.css";
+// import "./node_modules/prismjs/themes/prism.css";
+import "./resources/prism-themes/prism-darcula.css";
 b.asset("node_modules/bootswatch/cosmo/bootstrap.min.css");
 
 b.routes(

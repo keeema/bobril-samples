@@ -27,7 +27,7 @@ export class Navigation extends b.Component<{}> {
         <Container fluid>
           <NavbarHeader>
             <NavbarBrand>
-              <div>
+              <div onClick={this.goHome}>
                 <img
                   src={b.asset("../../resources/bobril_logo_50x50.png")}
                   height={20}
@@ -108,6 +108,12 @@ export class Navigation extends b.Component<{}> {
   private handleMenuItemClick(): boolean {
     this.collapsedMenu = true;
     return false;
+  }
+
+  @b.bind
+  private goHome(): boolean {
+    b.runTransition(b.createRedirectPush(routes.defaultRoute.name!));
+    return true;
   }
 }
 
