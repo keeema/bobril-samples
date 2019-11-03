@@ -122,11 +122,11 @@ b.init(() => <Timer />);
 
 [Preview example](../examples/timer/dist/index.html)
 
-## Todo Application
+## Todo Application and Functional Components
 
 Combination of several `components` with input `data`, `event delegation` and `internal state` allows to create full Todo application.
 
-Following component displays list of items given from its parent. It uses `key` attribute with unique id of item to assure clear identification of `<li>` bobril node . Otherwise it could cause mismatch of internat states.
+Following `functional components` display list of items given from its parent. It uses `key` attribute with unique id of item to assure clear identification of `<li>` bobril node . Otherwise it could cause mismatch of internat states.
 
 <!-- # from-file: ../examples/todo/components/list.tsx -->
 

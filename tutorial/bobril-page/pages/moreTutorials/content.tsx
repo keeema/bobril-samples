@@ -301,4 +301,131 @@ describe("Todo store", () => {
   });
 });
 `}</code></pre>
+<h2 id="routing">{`Routing`}</h2>
+<h3 id="defining-routes">{`Defining Routes`}</h3>
+<p>{`Bobril has few methods for defining the application route tree:`}</p>
+<ul>
+<li><code>b.route</code>{` - defines a route url, name, handler and a list of sub-routes`}</li>
+<li><code>b.routes</code>{` - registers routes to the application and calls `}<code>b.init</code></li>
+<li><code>b.routeDefault</code>{` - defines the default route if no sub-route is specified in the current url`}</li>
+</ul>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { PageOne } from "./pages/pageOne";
+import { PageTwo } from "./pages/pageTwo";
+import { MainPage } from "./pages/main";
+
+b.routes(
+  b.route({ handler: data => <MainPage {...data} /> }, [
+    b.route({ url: "/one", name: "one", handler: data => <PageOne {...data} /> }),
+    b.route({ url: "/two/:text?", name: "two", handler: data => <PageTwo {...data} /> }),
+    b.routeDefault({ handler: data => <PageOne {...data} /> })
+  ])
+);
+`}</code></pre>
+<p><a href="./routing/index.html">{`Preview example`}</a></p>
+<p>{`The whole application will be handled by a handler `}<code>MainPage</code>{` with sub-routes `}<em>{`one`}</em>{` and `}<em>{`two`}</em>{` on urls `}<code>/one</code>{` and `}<code>/two/</code>{` handled by handlers `}<code>PageOne</code>{` and `}<code>PageTwo</code>{` and the default handler `}<code>PageOne</code>{` will be used when no sub-route is specified.`}</p>
+<p>{`The url for page `}<em>{`two`}</em>{` contains a parameter specification after a second slash. It is defined by a `}<strong>{`colon`}</strong>{` and a `}<strong>{`name`}</strong>{` of the parameter. The `}<strong>{`question mark`}</strong>{` defines the parameter as optional. Route parameters can then be found in the input data prpoerty `}<code>routeParams</code>{`.`}</p>
+<h3 id="handling-routes">{`Handling Routes`}</h3>
+<p>{`Now we will write a `}<code>MainPage</code>{` component to render some own content and the visual content of the active sub-route. To do this a function provided in `}<code>data.activeRouteHandler</code>{` is used.`}</p>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+
+export let loggedIn = false;
+
+export class MainPage extends b.Component<b.IRouteHandlerData> {
+  render(): b.IBobrilNode {
+    return (
+      <>
+        <h1>Routing</h1>
+        <p>
+          Logged In:
+          <input type="checkbox" value={loggedIn} onChange={value => (loggedIn = value)} />
+        </p>
+        <hr />
+        {this.data.activeRouteHandler()}
+      </>
+    );
+  }
+}
+`}</code></pre>
+<p>{`This component renders a header, a line and the visual content of current active sub-route.`}</p>
+<h3 id="transitions">{`Transitions`}</h3>
+<p>{`Other part is to define sub-pages and transitions between those pages. Bobril offers the following functions and interface to define and run transitions between routes:`}</p>
+<ul>
+<li><code>b.IRouteTransition</code>{` - interface for a transition definition (target name, parameters etc.)`}</li>
+<li><code>b.createRedirectReplace</code>{` - creates IRouteTransition object for redirect without saving history`}</li>
+<li><code>b.createRedirectPush</code>{` - creates IRouteTransition object for redirect with saving history`}</li>
+<li><code>b.runTransition</code>{` - runs a transition according to an input IRouteTransition object`}</li>
+<li><code>b.link</code>{` - changes an input IBobrilNode to a link to the route of a specified name and with specified optional params`}</li>
+<li><code>&lt;Link&gt;</code>{` - b.link functiona s a `}<code>component</code></li>
+</ul>
+<p>{`Example of the redirect definition from the `}<code>PageOne</code>{` to the `}<code>PageTwo</code>{`:`}</p>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { observable } from "bobx";
+
+export class PageOne extends b.Component {
+  @observable private _text: string = "";
+
+  render(): b.IBobrilNode {
+    return (
+      <>
+        <input type="text" value={this._text} onChange={newVal => (this._text = newVal)} />
+        <button onClick={() => b.runTransition(b.createRedirectPush("two", { text: this._text }))}>
+          Confirm
+        </button>
+      </>
+    );
+  }
+  canDeactivate(): b.IRouteCanResult {
+    return !!this._text.trim() || confirm("The textbox is empty. Are you sure?");
+  }
+}
+`}</code></pre>
+<p>{`The code in onClick callback of button creates and runs a transition to the page `}<em>{`two`}</em>{` with an object defining the value of a `}<em>{`text`}</em>{` parameter.`}</p>
+<p>{`The transition above should be handled by the `}<code>PageTwo</code>{` handler.`}</p>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { Link } from "bobril";
+import { loggedIn } from "./main";
+
+export interface IPageTwoData extends b.IRouteHandlerData {
+  routeParams: { text?: string };
+}
+
+export class PageTwo extends b.Component<IPageTwoData> {
+  static canActivate(): b.IRouteCanResult {
+    if (loggedIn) {
+      return true;
+    }
+
+    alert("You are not logged in!");
+    return b.createRedirectReplace("one");
+  }
+
+  render(): b.IBobrilNode {
+    return (
+      <>
+        <p>Your text: {this.data.routeParams.text || "nothing"}</p>
+        <Link name="one">
+          <a>Go Home</a>
+        </Link>
+      </>
+    );
+  }
+}
+`}</code></pre>
+<p>{`The page receives the text parameter value in its `}<code>data.routeParams.text</code>{`. It also defines a link node to the page `}<em>{`one`}</em>{` by `}<code>&lt;Link name=&quot;one&quot;&gt;</code>{` around `}<code>&lt;a&gt;</code>{` element.`}</p>
+<h3 id="transition-availability">{`Transition Availability`}</h3>
+<p>{`The example also contains codes determining the possibility to enter or leave the page. For these purposes, we can use the following static functions of `}<code>IBobrilComponent</code>{`:`}</p>
+<ul>
+<li><code>static canActivate</code>{` - It can stop the current transition in a target handler by returning false or redirect to the new specified transition`}</li>
+<li><code>canDeactivate</code>{` - Can stop the current transition in the a source handler by returning false or redirect to the new specified transition`}</li>
+</ul>
+<p>{`The previous code also contains example, which handles leaving the page `}<em>{`one`}</em>{` with empty value of a textbox by adding `}<em>{`canDeactivate`}</em>{` function and example of handling the not logged user on accessing the page `}<em>{`two`}</em>{` by adding `}<code>static canActivate</code>{` function definition.`}</p>
 </>;

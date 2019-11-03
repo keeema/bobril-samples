@@ -94,9 +94,9 @@ class Timer extends b.Component {
 
 b.init(() => <Timer />);`}</code></pre>
 <p><a href="./timer/index.html">{`Preview example`}</a></p>
-<h2 id="todo-application">{`Todo Application`}</h2>
+<h2 id="todo-application-and-functional-components">{`Todo Application and Functional Components`}</h2>
 <p>{`Combination of several `}<code>components</code>{` with input `}<code>data</code>{`, `}<code>event delegation</code>{` and `}<code>internal state</code>{` allows to create full Todo application.`}</p>
-<p>{`Following component displays list of items given from its parent. It uses `}<code>key</code>{` attribute with unique id of item to assure clear identification of `}<code>&lt;li&gt;</code>{` bobril node . Otherwise it could cause mismatch of internat states.`}</p>
+<p>{`Following `}<code>functional components</code>{` display list of items given from its parent. It uses `}<code>key</code>{` attribute with unique id of item to assure clear identification of `}<code>&lt;li&gt;</code>{` bobril node . Otherwise it could cause mismatch of internat states.`}</p>
 
 
 <pre><code class="language-tsx">{`import * as b from "bobril";
