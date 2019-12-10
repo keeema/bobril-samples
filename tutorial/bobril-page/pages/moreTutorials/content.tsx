@@ -428,4 +428,123 @@ export class PageTwo extends b.Component<IPageTwoData> {
 <li><code>canDeactivate</code>{` - Can stop the current transition in the a source handler by returning false or redirect to the new specified transition`}</li>
 </ul>
 <p>{`The previous code also contains example, which handles leaving the page `}<em>{`one`}</em>{` with empty value of a textbox by adding `}<em>{`canDeactivate`}</em>{` function and example of handling the not logged user on accessing the page `}<em>{`two`}</em>{` by adding `}<code>static canActivate</code>{` function definition.`}</p>
+<h2 id="styling">{`Styling`}</h2>
+<p>{`Bobril has two ways of defining styles, `}<strong>{`inline styles`}</strong>{` and `}<strong>{`styles definitions`}</strong></p>
+<h3 id="inline-styles">{`Inline styles`}</h3>
+<ul>
+<li>{`Basic way of defining component style, just write css style as js object into style property of an element.`}</li>
+<li>{`CSS properties must be camelCased (`}<em>{`padding-top`}</em>{` -&gt; `}<em>{`paddingTop`}</em>{` ).`}</li>
+<li>{`Disadvantage of inline style is a bigger and less readable HTML and no advance CSS options - see style definitions.`}</li>
+</ul>
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import {IStyledComponentData} from "./interfaces";
+
+export class InlineStyling extends b.Component<IStyledComponentData> {
+    render(): b.IBobrilChildren {
+        const wrapperStyle = { border: "1px solid blue", padding: "15px", display: "inline-block", margin: "20px" };
+
+        return <div style={wrapperStyle}>
+            <div style={{ color: "blue", fontWeight: "bold", fontSize: "1.2em" }}>{this.data.label}</div>
+            <div style={{ paddingTop: "8px", fontStyle: "italic" }}>{this.data.children}</div>
+        </div>;
+    }
+}`}</code></pre>
+<h3 id="style-definition">{`Style definition`}</h3>
+<ul>
+<li>{`CSS style can be defined by `}<code>b.styleDef</code></li>
+<li>{`Bobril build will generate CSS class from style definitions and use CSS classes in components.`}</li>
+</ul>
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { IStyledComponentData } from "./interfaces";
+
+export const wrapperStyle = b.styleDef({ border: "1px solid blue", padding: "15px", display: "inline-block", margin: "20px" });
+export const titleStyle = b.styleDef({ color: "blue", fontWeight: "bold", fontSize: "1.2em" });
+export const bodyStyle = b.styleDef({ paddingTop: "8px", fontStyle: "italic" });
+
+export class CssBaseStyling extends b.Component<IStyledComponentData> {
+    render(): b.IBobrilChildren {
+        return <div style={wrapperStyle}>
+            <div style={titleStyle}>{this.data.label}</div>
+            <div style={bodyStyle}>{this.data.children}</div>
+        </div>;
+    }
+}`}</code></pre>
+<ul>
+<li>{`To create CSS subclass use `}<code>b.styleDefEx</code>{`. First parameter is original class and the second is subclass style.`}</li>
+<li>{`Please notice several styles can be combined as array in the style property.`}</li>
+</ul>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { IStyledComponentData } from "./interfaces";
+import { bodyStyle, titleStyle, wrapperStyle } from "./cssBaseStyling";
+
+const extendedWrapperStyle = b.styleDefEx(wrapperStyle, { borderColor: "red" });
+
+export class CssExtendingStyling extends b.Component<IStyledComponentData> {
+    render(): b.IBobrilChildren {
+        return <div style={[wrapperStyle, extendedWrapperStyle]}>
+            <div style={titleStyle}>{this.data.label}</div>
+            <div style={bodyStyle}>{this.data.children}</div>
+        </div>;
+    }
+}`}</code></pre>
+<ul>
+<li>{`CSS selectors can be used in Bobril as well. Just use second optional parameter in `}<code>b.styleDef</code>{`.`}
+
+</li>
+</ul>
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { IStyledComponentData } from "./interfaces";
+import { wrapperStyle, titleStyle, bodyStyle } from "./cssBaseStyling";
+
+const hoveredStyle = b.styleDef( { borderColor: "red", color: "green" });
+const wrapperHoveredStyle = b.styleDef(wrapperStyle, { hover: hoveredStyle });
+
+export class CssSelectorsStyling extends b.Component<IStyledComponentData> {
+    render(): b.IBobrilChildren {
+        return <div style={[wrapperStyle, wrapperHoveredStyle ]}>
+            <div style={titleStyle}>{this.data.label}</div>
+            <div style={bodyStyle}>{this.data.children}</div>
+        </div>;
+    }
+}`}</code></pre>
+<h3 id="media-queries">{`Media Queries`}</h3>
+<ul>
+<li>{`To define media query use `}<code>b.mediaQueryDef</code>{`, first parameter is media query and second affected styles with styling changes.`}</li>
+<li>{`Build-in builder `}<code>b.createMediaQuery</code>{` can be used to write media query.`}</li>
+</ul>
+
+
+<pre><code class="language-tsx">{`import * as b from "bobril";
+import { IStyledComponentData } from "./interfaces";
+import { bodyStyle, titleStyle, wrapperStyle } from "./cssBaseStyling";
+
+const mediaQueryStyle = b.styleDefEx(wrapperStyle, { borderColor: "green" });
+
+// results in "only screen and (max-width: 600px) , only print"
+const mediaQueryDef = b.createMediaQuery()
+    .rule("only", "screen")
+    .and({type: "max-width", value: 600, unit: "px"})
+    .or()
+    .rule("only", "print")
+    .build();
+
+b.mediaQueryDef(mediaQueryDef, {
+    [mediaQueryStyle]: {
+        opacity: 0.5
+    }
+});
+
+export class MediaQueriesStyling extends b.Component<IStyledComponentData> {
+    render(): b.IBobrilChildren {
+        return <div style={[wrapperStyle, mediaQueryStyle ]}>
+            <div style={titleStyle}>{this.data.label}</div>
+            <div style={bodyStyle}>{this.data.children}</div>
+        </div>;
+    }
+}`}</code></pre>
+<p><a href="./styling/index.html">{`Preview example`}</a></p>
 </>;
