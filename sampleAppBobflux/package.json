@@ -21,5 +21,12 @@
     "bobflux": "^9.0.1",
     "bobflux-monitor": "^4.0.0",
     "bobril": "^8.17.1"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-bobril": "*",
+    "@typescript-eslint/parser": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "typescript": "*"
   }
 }
