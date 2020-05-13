@@ -10,5 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "bobril": "^8.17.1"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-bobril": "*",
+    "@typescript-eslint/parser": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "typescript": "*"
   }
 }

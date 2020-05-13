@@ -12,5 +12,12 @@
     "bobril": "^14.6.0",
     "bobrilstrap": "^3.4.0",
     "bobx": "^0.28.0"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-bobril": "*",
+    "@typescript-eslint/parser": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "typescript": "*"
   }
 }
