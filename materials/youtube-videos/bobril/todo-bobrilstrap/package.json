@@ -18,6 +18,6 @@
     "eslint-config-bobril": "*",
     "@typescript-eslint/parser": "*",
     "@typescript-eslint/eslint-plugin": "*",
-    "typescript": "*"
+    "typescript": "3.8.3"
   }
 }

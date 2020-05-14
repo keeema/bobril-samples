@@ -9,15 +9,15 @@
   "author": "keeema",
   "license": "ISC",
   "dependencies": {
-    "bobril": "^8.17.1",
-    "bobrilstrap": "^3.0.4",
-    "bobx": "^0.23.1"
+    "bobril": "^14.6.1",
+    "bobrilstrap": "^3.4.2",
+    "bobx": "^0.28.0"
   },
   "devDependencies": {
     "eslint": "*",
     "eslint-config-bobril": "*",
     "@typescript-eslint/parser": "*",
     "@typescript-eslint/eslint-plugin": "*",
-    "typescript": "*"
+    "typescript": "3.8.3"
   }
 }
